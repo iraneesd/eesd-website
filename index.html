@@ -1,404 +1,529 @@
 
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#073f35">
-<meta name="description" content="Scientific Association for Environmental Education and Sustainable Development (EESD)">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#073e32">
 <title>EESD | Scientific Association for Environmental Education and Sustainable Development</title>
+<meta name="description" content="Official website of the Scientific Association for Environmental Education and Sustainable Development. Research, microbiology, environmental science, ethics and sustainability.">
 
 <style>
-:root{
---green:#073f35;
---green2:#0c6652;
---mint:#eaf4ef;
---gold:#d8b968;
---ink:#18332c;
---muted:#687c74;
---white:#fff;
---line:#dce8e1;
+:root {
+  --forest:#073e32;
+  --deep:#092f29;
+  --emerald:#08785a;
+  --green:#16865e;
+  --sage:#83ad8b;
+  --mint:#e7f2e9;
+  --pale:#f4f8f4;
+  --olive:#a5a86a;
+  --gold:#d6b96a;
+  --ink:#183c32;
+  --muted:#687e74;
+  --white:#fff;
+  --border:#dce9df;
+  --shadow:0 15px 45px rgba(13,61,45,.08);
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:100px}
-body{margin:0;font-family:Arial,"Segoe UI",sans-serif;color:var(--ink);line-height:1.75}
-body.fa{font-family:Tahoma,Arial,sans-serif;direction:rtl}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+ font-family:Arial,Helvetica,sans-serif;
+ background:var(--pale);
+ color:var(--ink);
+ line-height:1.75;
+}
 a{text-decoration:none;color:inherit}
-button{font:inherit}
-.container{width:min(1180px,92%);margin:auto}
-.topline{height:6px;background:linear-gradient(90deg,var(--green),#18856b,#b5d7c4)}
-header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--line)}
-.header{min-height:92px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:13px;min-width:270px}
-.brand img{width:67px;height:67px;object-fit:contain}
-.brand-title{font-size:14px;font-weight:800;line-height:1.35;color:var(--green)}
-.brand-title b{display:block;color:var(--green2);font-size:20px;letter-spacing:2px}
-.brand-title small{display:block;font-size:9px;color:var(--muted);letter-spacing:1.5px;font-weight:500}
-nav{display:flex;align-items:center;gap:5px}
-nav>a,nav summary{padding:10px 9px;font-size:12px;font-weight:bold;white-space:nowrap;cursor:pointer;border-radius:7px}
-nav>a:hover,nav summary:hover{background:var(--mint);color:var(--green2)}
-nav details{position:relative}
-nav summary{list-style:none}
-nav summary::-webkit-details-marker{display:none}
-nav summary:after{content:"⌄";margin-left:6px}
-.dropdown{position:absolute;top:100%;left:0;min-width:210px;background:#fff;border:1px solid var(--line);box-shadow:0 12px 35px #073f3520;border-radius:10px;padding:8px}
-.dropdown a{display:block;padding:9px 12px;font-size:13px;border-radius:6px}
-.dropdown a:hover{background:var(--mint)}
-.lang{display:flex;gap:4px;border:1px solid var(--line);padding:4px;border-radius:10px}
-.lang button{border:0;background:white;padding:7px 10px;border-radius:7px;cursor:pointer;font-size:11px;font-weight:bold}
-.lang button.active{background:var(--green);color:white}
-.menu{display:none;background:white;border:1px solid var(--line);padding:8px 12px;border-radius:8px;color:var(--green);font-size:21px}
-.hero{background:linear-gradient(125deg,#062f29,#0c6652);color:white;padding:100px 0 75px;position:relative;overflow:hidden}
-.hero:after{content:"EESD";position:absolute;right:2%;bottom:-90px;font-size:250px;font-weight:900;color:#ffffff09}
-.hero-content{max-width:850px;position:relative;z-index:1}
-.eyebrow{color:var(--gold);font-weight:bold;letter-spacing:2px;font-size:12px}
-.hero h1{font-size:clamp(30px,5vw,55px);line-height:1.2;margin:20px 0}
-.hero p{font-size:18px;color:#e1eee8;max-width:760px}
-.pills{display:flex;flex-wrap:wrap;gap:10px;margin:25px 0}
-.pill{border:1px solid #ffffff45;padding:8px 15px;border-radius:30px;font-size:12px}
-.btn{display:inline-block;padding:13px 22px;border-radius:10px;font-weight:bold;margin:8px 8px 0 0}
-.btn-light{background:white;color:var(--green)}
-.btn-outline{border:1px solid #ffffff80;color:white}
-section{padding:80px 0}
-.section-label{font-size:11px;font-weight:bold;letter-spacing:2px;color:var(--green2)}
-h2{font-size:32px;line-height:1.3;color:var(--green);margin:10px 0 25px}
-h3{color:var(--green)}
-.intro{max-width:780px;color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:30px}
-.card{padding:25px;background:white;border:1px solid var(--line);border-radius:15px;box-shadow:0 8px 25px #073f3508}
-.card p{color:var(--muted);font-size:14px}
-.card a{font-weight:bold;color:var(--green2)}
-.soft{background:#f5f9f6}
-.mission{background:var(--green);color:white;border-radius:22px;padding:38px}
-.mission h2,.mission h3{color:white}
-.mission p{color:#dbeae3}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
-.list{padding-left:20px}
-body.fa .list{padding-left:0;padding-right:20px}
-.list li{margin:9px 0}
-.ethics{background:linear-gradient(135deg,#073f35,#0c6652);color:white}
-.ethics h2,.ethics h3{color:white}
-.ethics .intro,.ethics p{color:#e1eee8}
-.ethics-box{background:#ffffff12;border:1px solid #ffffff35;border-radius:15px;padding:25px;margin-top:25px}
-.reference{display:block;color:#d6eadd;font-size:13px;overflow-wrap:anywhere;margin:9px 0}
-.number{color:var(--gold);font-weight:bold}
-.tag{display:inline-block;background:var(--mint);color:var(--green);border-radius:30px;padding:5px 12px;font-size:11px;font-weight:bold}
-.notice{border-left:4px solid var(--gold);padding:15px;background:#ffffff12;margin-top:18px}
-body.fa .notice{border-left:0;border-right:4px solid var(--gold)}
-.professional{background:#f4f8f5}
-.profile-note{padding:25px;border:1px solid var(--line);border-radius:14px;background:white}
-footer{background:#062f29;color:white;padding:45px 0}
-footer p{color:#d4e4dc;font-size:13px}
-footer a{color:#d6c17c}
-hr{border:0;border-top:1px solid var(--line);margin:25px 0}
-@media(max-width:950px){
-.header{flex-wrap:wrap;padding:12px 0}
-.menu{display:block}
-nav{display:none;order:3;width:100%;align-items:stretch;flex-direction:column}
-nav.open{display:flex}
-nav>a,nav summary{display:block}
-.dropdown{position:static;box-shadow:none}
-.grid{grid-template-columns:repeat(2,1fr)}
-.two{grid-template-columns:1fr}
+button{font:inherit;cursor:pointer}
+.container{width:min(1180px,91%);margin:auto}
+
+/* HEADER */
+header{
+ background:rgba(255,255,255,.97);
+ position:sticky;top:0;z-index:1000;
+ border-bottom:1px solid var(--border);
+ backdrop-filter:blur(14px);
 }
-@media(max-width:600px){
-.grid{grid-template-columns:1fr}
-.hero{padding:65px 0}
-section{padding:55px 0}
-.brand{min-width:0}
-.brand img{width:53px;height:53px}
-.brand-title{font-size:11px}
-.brand-title b{font-size:17px}
+.topbar{
+ min-height:92px;
+ display:flex;align-items:center;
+ justify-content:space-between;gap:25px;
+}
+.brand{display:flex;align-items:center;gap:15px;min-width:270px}
+.brand img{
+ width:70px;height:70px;object-fit:contain;
+ border-radius:12px;
+}
+.brand-name{font-size:19px;font-weight:800;color:var(--forest)}
+.brand-name small{
+ display:block;font-size:10px;letter-spacing:2px;
+ color:var(--muted);font-weight:500;margin-top:3px;
+}
+nav{display:flex;align-items:center;gap:22px}
+nav a{
+ font-size:13px;font-weight:700;color:var(--ink);
+ transition:.25s;
+}
+nav a:hover{color:var(--green)}
+.header-actions{display:flex;align-items:center;gap:10px}
+.lang{
+ background:white;border:1px solid var(--border);
+ border-radius:30px;padding:9px 15px;
+ color:var(--forest);font-weight:700;
+}
+.menu-btn{
+ display:none;background:var(--forest);color:white;
+ border:0;border-radius:10px;padding:9px 13px;
+}
+
+/* HERO */
+.hero{
+ position:relative;overflow:hidden;
+ background:linear-gradient(120deg,#07382e 0%,#08624b 52%,#25835b 100%);
+ color:white;padding:100px 0 90px;
+}
+.hero:before{
+ content:"";position:absolute;
+ width:650px;height:650px;border-radius:50%;
+ border:1px solid rgba(255,255,255,.12);
+ right:-150px;top:-290px;
+ box-shadow:0 0 0 65px rgba(255,255,255,.025),
+ 0 0 0 130px rgba(255,255,255,.025);
+}
+.hero:after{
+ content:"";position:absolute;
+ width:380px;height:380px;border-radius:50%;
+ background:rgba(170,204,140,.12);
+ filter:blur(80px);left:-100px;bottom:-200px;
+}
+.hero-content{position:relative;z-index:2;max-width:850px}
+.eyebrow{
+ color:#d6d99b;text-transform:uppercase;
+ letter-spacing:3px;font-size:12px;
+ font-weight:800;margin-bottom:22px;
+}
+.hero h1{
+ font-size:clamp(35px,5vw,59px);
+ line-height:1.16;letter-spacing:-1.5px;
+ max-width:850px;margin-bottom:25px;
+}
+.hero p{
+ font-size:18px;color:#e0eee4;
+ max-width:760px;line-height:1.9;
+}
+.hero-tags{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.tag{
+ border:1px solid rgba(255,255,255,.3);
+ border-radius:30px;padding:8px 16px;
+ font-size:12px;color:#f0f5ec;
+}
+.hero-buttons{display:flex;gap:13px;flex-wrap:wrap;margin-top:35px}
+.btn{
+ display:inline-block;padding:13px 23px;
+ border-radius:10px;font-size:13px;
+ font-weight:800;transition:.25s;
+}
+.btn-light{background:white;color:var(--forest)}
+.btn-outline{border:1px solid rgba(255,255,255,.55);color:white}
+.btn:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+
+/* GENERAL SECTIONS */
+section{padding:85px 0}
+.section-label{
+ color:var(--emerald);font-size:11px;
+ font-weight:800;letter-spacing:3px;
+ text-transform:uppercase;margin-bottom:12px;
+}
+.section-title{
+ color:var(--forest);
+ font-size:clamp(27px,3vw,39px);
+ line-height:1.25;margin-bottom:17px;
+}
+.section-intro{
+ color:var(--muted);max-width:760px;
+ margin-bottom:38px;font-size:16px;
+}
+.grid{display:grid;gap:22px}
+.two-col{grid-template-columns:1fr 1fr}
+.three-col{grid-template-columns:repeat(3,1fr)}
+.four-col{grid-template-columns:repeat(4,1fr)}
+
+/* ABOUT */
+.about{background:white}
+.about-text p{color:var(--muted);margin:0 0 19px}
+.mission{
+ background:linear-gradient(145deg,var(--forest),#126b50);
+ color:white;border-radius:22px;padding:38px;
+ position:relative;overflow:hidden;
+ box-shadow:var(--shadow);
+}
+.mission:after{
+ content:"EESD";position:absolute;
+ right:12px;bottom:-35px;font-size:100px;
+ font-weight:900;color:rgba(255,255,255,.045);
+}
+.mission h3{font-size:25px;margin-bottom:16px}
+.mission p{color:#dcece1;font-size:14px}
+.mission ul{list-style:none;margin-top:25px}
+.mission li{padding:10px 0;border-bottom:1px solid #ffffff25;font-size:13px}
+.mission li:before{content:"✓";color:#d4dc92;margin-right:12px}
+
+/* RESEARCH */
+.research{background:#eef5ef}
+.research-card{
+ background:white;border:1px solid var(--border);
+ border-radius:17px;padding:28px;
+ min-height:220px;transition:.3s;
+ box-shadow:0 5px 20px rgba(20,65,43,.025);
+}
+.research-card:hover{
+ transform:translateY(-7px);
+ box-shadow:var(--shadow);border-color:var(--sage);
+}
+.card-icon{
+ width:48px;height:48px;border-radius:14px;
+ background:var(--mint);display:grid;
+ place-items:center;font-size:23px;margin-bottom:20px;
+}
+.research-card h3{font-size:17px;color:var(--forest);margin-bottom:12px}
+.research-card p{font-size:13px;color:var(--muted);line-height:1.8}
+
+/* COMMITTEES */
+.committees{background:white}
+.committee-card{
+ padding:26px;border:1px solid var(--border);
+ border-radius:15px;background:linear-gradient(145deg,#fff,#f7faf7);
+}
+.committee-card h3{color:var(--forest);font-size:17px;margin-bottom:10px}
+.committee-card p{color:var(--muted);font-size:13px}
+.committee-card .number{
+ color:var(--green);font-size:12px;font-weight:800;
+ letter-spacing:2px;margin-bottom:15px;
+}
+
+/* MICROBIOLOGY FEATURE */
+.microbiology{
+ background:linear-gradient(120deg,#073a30,#0d654a 65%,#43835a);
+ color:white;position:relative;overflow:hidden;
+}
+.microbiology:after{
+ content:"";position:absolute;width:480px;height:480px;
+ border:1px solid #ffffff24;border-radius:50%;
+ right:-130px;top:-150px;
+ box-shadow:0 0 0 55px #ffffff09,0 0 0 110px #ffffff06;
+}
+.micro-content{position:relative;z-index:2}
+.microbiology .section-label{color:#d9d99c}
+.microbiology .section-title{color:white}
+.microbiology .section-intro{color:#d7e9dc}
+.micro-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px}
+.micro-panel{
+ background:#ffffff12;border:1px solid #ffffff35;
+ border-radius:18px;padding:30px;
+ backdrop-filter:blur(10px);
+}
+.micro-panel h3{font-size:20px;margin-bottom:15px}
+.micro-panel p{font-size:14px;color:#e2eee4}
+.micro-panel ul{padding-left:20px;margin-top:18px}
+.micro-panel li{font-size:13px;margin:8px 0;color:#e6f0e8}
+.since{
+ display:inline-block;background:#dce9bd;color:#184b37;
+ border-radius:30px;padding:7px 15px;
+ font-weight:800;font-size:12px;margin-bottom:20px;
+}
+
+/* ETHICS */
+.ethics{background:#f3f7f2}
+.ethics-main{
+ background:white;border-radius:20px;padding:38px;
+ border:1px solid var(--border);box-shadow:var(--shadow);
+}
+.ethics-main p{color:var(--muted);font-size:14px;margin:15px 0}
+.ethics-notice{
+ background:#e9f2e7;border-left:4px solid var(--emerald);
+ padding:17px 20px;border-radius:5px;
+ font-size:13px;color:var(--forest);margin-top:20px;
+}
+.resource-list{
+ display:grid;grid-template-columns:1fr 1fr;
+ gap:12px;margin-top:25px;
+}
+.resource{
+ display:block;padding:15px;
+ border:1px solid var(--border);
+ border-radius:10px;background:white;
+ color:var(--forest);font-size:13px;
+ transition:.2s;
+}
+.resource:hover{background:var(--mint);border-color:var(--sage)}
+
+/* ACTIVITIES */
+.activity-card{
+ border-radius:17px;background:white;
+ padding:27px;border:1px solid var(--border);
+}
+.activity-card h3{font-size:17px;color:var(--forest);margin-bottom:12px}
+.activity-card p{font-size:13px;color:var(--muted)}
+.activity-card .card-icon{background:#eaf3e8}
+
+/* FOOTER */
+.contact{
+ background:var(--deep);color:white;padding:70px 0;
+}
+.contact .section-title{color:white}
+.contact p{color:#d0e1d5}
+.contact a{color:#d7df9f}
+.footer-bottom{
+ border-top:1px solid #ffffff25;
+ margin-top:45px;padding-top:22px;
+ color:#b7c9bb;font-size:12px;
+}
+.footer-links{display:flex;flex-wrap:wrap;gap:20px;margin-top:25px}
+.footer-links a{font-size:13px}
+footer{text-align:center;padding:18px;background:#05271f;color:#c1d3c5;font-size:11px}
+
+/* LANGUAGE */
+html[dir="rtl"] body{font-family:Tahoma,Arial,sans-serif}
+html[dir="rtl"] .mission li:before{margin-right:0;margin-left:12px}
+html[dir="rtl"] .ethics-notice{border-left:0;border-right:4px solid var(--emerald)}
+html[dir="rtl"] .resource-list{text-align:right}
+
+/* RESPONSIVE */
+@media(max-width:950px){
+ nav{
+  display:none;position:absolute;top:92px;left:0;right:0;
+  background:white;padding:20px 5%;
+  flex-direction:column;align-items:flex-start;
+  border-bottom:1px solid var(--border);
+ }
+ nav.open{display:flex}
+ .menu-btn{display:block}
+ .three-col{grid-template-columns:repeat(2,1fr)}
+ .four-col{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:650px){
+ .brand{min-width:0}
+ .brand img{width:55px;height:55px}
+ .brand-name{font-size:14px}
+ .brand-name small{font-size:8px}
+ .hero{padding:75px 0}
+ section{padding:60px 0}
+ .two-col,.three-col,.four-col,.micro-grid{grid-template-columns:1fr}
+ .resource-list{grid-template-columns:1fr}
+ .mission,.ethics-main{padding:25px}
 }
 </style>
 </head>
 
 <body>
-<div class="topline"></div>
 
 <header>
-<div class="container header">
-<a href="#home" class="brand">
-<img src="logo.jfif" alt="Official EESD logo">
-<div class="brand-title">
-<span>Scientific Association for Environmental Education and Sustainable Development</span>
-<b>EESD</b>
-<small>SCIENCE · ENVIRONMENT · SUSTAINABILITY</small>
-</div>
-</a>
+ <div class="container topbar">
+  <a class="brand" href="#home">
+   <img src="logo.jfif" alt="Official EESD Logo">
+   <span class="brand-name">
+    Scientific Association for Environmental Education and Sustainable Development
+    <small>EESD · SCIENCE · ENVIRONMENT · SUSTAINABILITY</small>
+   </span>
+  </a>
 
-<button class="menu" onclick="document.querySelector('nav').classList.toggle('open')" aria-label="Menu">☰</button>
+  <nav id="nav">
+   <a href="#home" data-en="Home" data-fa="خانه">Home</a>
+   <a href="#about" data-en="About" data-fa="درباره انجمن">About</a>
+   <a href="#research" data-en="Research Areas" data-fa="حوزه‌های پژوهشی">Research Areas</a>
+   <a href="#committees" data-en="Committees" data-fa="کارگروه‌ها">Committees</a>
+   <a href="#ethics" data-en="Research Ethics" data-fa="اخلاق پژوهش">Research Ethics</a>
+   <a href="#activities" data-en="Activities" data-fa="فعالیت‌ها">Activities</a>
+   <a href="#contact" data-en="Contact" data-fa="ارتباط با ما">Contact</a>
+  </nav>
 
-<nav>
-<a href="#home" data-en="Home" data-fa="خانه">Home</a>
-<details>
-<summary data-en="About" data-fa="درباره انجمن">About</summary>
-<div class="dropdown">
-<a href="#about" data-en="Overview & Mission" data-fa="معرفی و مأموریت">Overview & Mission</a>
-<a href="#history" data-en="History & Governance" data-fa="تاریخچه و ساختار">History & Governance</a>
-</div>
-</details>
-<details>
-<summary data-en="Committees" data-fa="کمیته‌ها">Committees</summary>
-<div class="dropdown">
-<a href="#committees" data-en="Scientific Committees" data-fa="کمیته‌های علمی">Scientific Committees</a>
-<a href="#ethics" data-en="Ethics Committee" data-fa="کمیته اخلاق">Ethics Committee</a>
-<a href="#animal" data-en="Animal Protection" data-fa="حمایت از حیوانات">Animal Protection</a>
-</div>
-</details>
-<a href="#research" data-en="Research Areas" data-fa="حوزه‌های پژوهشی">Research Areas</a>
-<a href="#programs" data-en="Programs" data-fa="برنامه‌ها">Programs</a>
-<a href="#publications" data-en="Publications" data-fa="انتشارات">Publications</a>
-<a href="#professional" data-en="Professional" data-fa="فعالیت‌های حرفه‌ای">Professional</a>
-<a href="#contact" data-en="Contact" data-fa="تماس">Contact</a>
-</nav>
-
-<div class="lang">
-<button id="enBtn" class="active" onclick="setLanguage('en')">EN</button>
-<button id="faBtn" onclick="setLanguage('fa')">FA</button>
-</div>
-</div>
+  <div class="header-actions">
+   <button class="lang" id="langBtn" onclick="toggleLang()">FA</button>
+   <button class="menu-btn" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+  </div>
+ </div>
 </header>
 
 <main>
+
+<!-- HERO -->
 <section class="hero" id="home">
-<div class="container hero-content">
-<div class="eyebrow" data-en="WELCOME TO EESD" data-fa="به انجمن EESD خوش آمدید">WELCOME TO EESD</div>
-<h1 data-en="Scientific Association for Environmental Education and Sustainable Development" data-fa="انجمن علمی آموزش محیط زیست و توسعه پایدار">Scientific Association for Environmental Education and Sustainable Development</h1>
-<p data-en="A scientific, non-governmental and non-profit association bringing together education, research and professional cooperation to support a sustainable environment." data-fa="انجمنی علمی، غیردولتی و غیرانتفاعی برای توسعه آموزش، پژوهش و همکاری‌های تخصصی در راستای حفاظت از محیط زیست و توسعه پایدار.">A scientific, non-governmental and non-profit association bringing together education, research and professional cooperation to support a sustainable environment.</p>
-<div class="pills">
-<span class="pill">Established 8/10/2012</span>
-<span class="pill">Scientific Association</span>
-<span class="pill">EESD</span>
-</div>
-<a class="btn btn-light" href="#about" data-en="Discover the Association →" data-fa="آشنایی با انجمن ←">Discover the Association →</a>
-<a class="btn btn-outline" href="#ethics" data-en="Research Ethics" data-fa="کد اخلاق پژوهش">Research Ethics</a>
-</div>
+ <div class="container hero-content">
+  <div class="eyebrow" data-en="WELCOME TO EESD" data-fa="به انجمن علمی EESD خوش آمدید">WELCOME TO EESD</div>
+
+  <h1 data-en="Scientific Association for Environmental Education and Sustainable Development"
+  data-fa="انجمن علمی آموزش محیط زیست و توسعه پایدار">
+  Scientific Association for Environmental Education and Sustainable Development
+  </h1>
+
+  <p data-en="A scientific, non-governmental and non-profit association bringing together education, research and professional cooperation to support a sustainable environment."
+  data-fa="انجمنی علمی، غیردولتی و غیرانتفاعی برای گسترش آموزش، پژوهش و همکاری تخصصی در راستای محیط زیست پایدار.">
+  A scientific, non-governmental and non-profit association bringing together education, research and professional cooperation to support a sustainable environment.
+  </p>
+
+  <div class="hero-tags">
+   <span class="tag">Established 8/10/2012</span>
+   <span class="tag">Scientific Association</span>
+   <span class="tag">EESD</span>
+  </div>
+
+  <div class="hero-buttons">
+   <a class="btn btn-light" href="#about" data-en="Discover the Association →" data-fa="آشنایی با انجمن ←">Discover the Association →</a>
+   <a class="btn btn-outline" href="#ethics" data-en="Research Ethics" data-fa="اخلاق پژوهش">Research Ethics</a>
+  </div>
+ </div>
 </section>
 
-<section id="about">
-<div class="container two">
-<div>
-<div class="section-label" data-en="WHO WE ARE" data-fa="ما که هستیم">WHO WE ARE</div>
-<h2 data-en="A multidisciplinary scientific association" data-fa="یک انجمن علمی چندرشته‌ای">A multidisciplinary scientific association</h2>
-<p class="intro" data-en="The Scientific Association for Environmental Education and Sustainable Development (EESD) supports environmental education, scientific and cultural research, professional cooperation and the advancement of sustainable development." data-fa="انجمن علمی آموزش محیط زیست و توسعه پایدار (EESD) با هدف حمایت از آموزش محیط زیست، پژوهش‌های علمی و فرهنگی، همکاری‌های تخصصی و پیشبرد توسعه پایدار فعالیت می‌کند.">The Scientific Association for Environmental Education and Sustainable Development (EESD) supports environmental education, scientific and cultural research, professional cooperation and the advancement of sustainable development.</p>
-<p class="intro" data-en="The Association brings together scientific interests across environmental sciences, biology, biodiversity, environmental health, education and related disciplines." data-fa="این انجمن زمینه تعامل میان علاقه‌مندان و متخصصان علوم محیط زیست، زیست‌شناسی، تنوع زیستی، سلامت محیط، آموزش و رشته‌های مرتبط را فراهم می‌کند.">The Association brings together scientific interests across environmental sciences, biology, biodiversity, environmental health, education and related disciplines.</p>
-</div>
-<div class="mission">
-<div class="section-label">OUR MISSION</div>
-<h2>Advancing Science. Protecting Our Shared Environment.</h2>
-<p>To advance environmental awareness and sustainable development through scientific education, research cooperation, knowledge exchange and interdisciplinary engagement.</p>
-<ul class="list">
-<li>Scientific and educational development</li>
-<li>Environmental research and awareness</li>
-<li>Interdisciplinary scientific cooperation</li>
-<li>Knowledge dissemination and professional exchange</li>
-<li>Support for sustainable development</li>
-</ul>
-</div>
-</div>
+<!-- ABOUT -->
+<section class="about" id="about">
+ <div class="container grid two-col">
+  <div class="about-text">
+   <div class="section-label">WHO WE ARE</div>
+   <h2 class="section-title" data-en="A multidisciplinary scientific association" data-fa="یک انجمن علمی چندرشته‌ای">A multidisciplinary scientific association</h2>
+   <p data-en="The Scientific Association for Environmental Education and Sustainable Development is a non-governmental, non-profit scientific organization established to promote environmental knowledge, education, research and sustainable development."
+   data-fa="انجمن علمی آموزش محیط زیست و توسعه پایدار، سازمانی علمی، غیردولتی و غیرانتفاعی است که با هدف گسترش دانش محیط زیست، آموزش، پژوهش و توسعه پایدار تأسیس شده است.">
+   The Scientific Association for Environmental Education and Sustainable Development is a non-governmental, non-profit scientific organization established to promote environmental knowledge, education, research and sustainable development.
+   </p>
+   <p data-en="The Association encourages scientific exchange, interdisciplinary collaboration, professional development and the dissemination of research findings through educational and research activities."
+   data-fa="انجمن از تبادل علمی، همکاری میان‌رشته‌ای، توسعه تخصصی و انتشار دستاوردهای پژوهشی از طریق فعالیت‌های آموزشی و تحقیقاتی حمایت می‌کند.">
+   The Association encourages scientific exchange, interdisciplinary collaboration, professional development and the dissemination of research findings through educational and research activities.
+   </p>
+   <p data-en="Its activities are guided by its approved statutes and the objectives of scientific associations."
+   data-fa="فعالیت‌های انجمن بر اساس اساسنامه مصوب و اهداف انجمن‌های علمی انجام می‌شود.">
+   Its activities are guided by its approved statutes and the objectives of scientific associations.
+   </p>
+  </div>
+
+  <div class="mission">
+   <h3>Our Mission</h3>
+   <p>To advance environmental awareness and sustainable development through scientific education, research cooperation, knowledge exchange and interdisciplinary engagement.</p>
+   <ul>
+    <li>Scientific and educational development</li>
+    <li>Environmental research and awareness</li>
+    <li>Interdisciplinary scientific cooperation</li>
+    <li>Knowledge dissemination and professional exchange</li>
+    <li>Support for sustainable development</li>
+   </ul>
+  </div>
+ </div>
 </section>
 
-<section class="soft" id="history">
-<div class="container">
-<div class="section-label">OUR HISTORY</div>
-<h2 data-en="History and institutional identity" data-fa="تاریخچه و هویت سازمانی">History and institutional identity</h2>
-<p class="intro" data-en="The Association was established on 8 October 2012 after obtaining a license from the Ministry of Science, Research and Technology of Iran. Its original records and historical identity are preserved through the Association's official archive and profile." data-fa="انجمن در تاریخ ۸ اکتبر ۲۰۱۲ پس از دریافت مجوز از وزارت علوم، تحقیقات و فناوری ایران تأسیس شد. سوابق تاریخی و هویت اولیه انجمن در آرشیو و صفحه رسمی آن حفظ می‌شود.">The Association was established on 8 October 2012 after obtaining a license from the Ministry of Science, Research and Technology of Iran. Its original records and historical identity are preserved through the Association's official archive and profile.</p>
-<div class="grid">
-<div class="card"><span class="number">2012</span><h3>Establishment</h3><p>Historical establishment date recorded by the Association.</p></div>
-<div class="card"><span class="number">EESD</span><h3>Scientific identity</h3><p>Environmental education and sustainable development.</p></div>
-<div class="card"><span class="number">Iran</span><h3>Institutional context</h3><p>Licensed under the relevant national framework for scientific associations.</p></div>
-</div>
-</div>
+<!-- RESEARCH AREAS -->
+<section class="research" id="research">
+ <div class="container">
+  <div class="section-label">SCIENTIFIC SCOPE</div>
+  <h2 class="section-title">Research Areas</h2>
+  <p class="section-intro">The Association welcomes interdisciplinary interests and collaboration across the following scientific fields.</p>
+
+  <div class="grid four-col">
+
+   <article class="research-card">
+    <div class="card-icon">🧫</div>
+    <h3>Environmental Microbiology & Microbial Ecology</h3>
+    <p>Microbial diversity, environmental microorganisms, microbial ecology, ecosystem interactions and environmental biotechnology.</p>
+   </article>
+
+   <article class="research-card">
+    <div class="card-icon">🔬</div>
+    <h3>Microbiology & Antimicrobial Resistance</h3>
+    <p>Bacterial diversity, antimicrobial resistance, bacterial pathogens, molecular microbiology and microbial health research.</p>
+   </article>
+
+   <article class="research-card">
+    <div class="card-icon">🧬</div>
+    <h3>Molecular Biology & Biotechnology</h3>
+    <p>Molecular diagnostics, microbial genetics, biotechnology, genomics and applied biological research.</p>
+   </article>
+
+   <article class="research-card">
+    <div class="card-icon">🌱</div>
+    <h3>Environmental Health & One Health</h3>
+    <p>Environmental health, microbial hazards, public health, ecosystem health and the relationship between human, animal and environmental health.</p>
+   </article>
+
+   <article class="research-card">
+    <div class="card-icon">🦋</div>
+    <h3>Biodiversity & Conservation Biology</h3>
+    <p>Taxonomy, biosystematics, zoology, botany, marine biology, biodiversity and conservation.</p>
+   </article>
+
+   <article class="research-card">
+    <div class="card-icon">🌍</div>
+    <h3>Environmental Sciences & Pollution</h3>
+    <p>Environmental engineering, pollution, environmental chemistry, ecology and environmental protection.</p>
+   </article>
+
+   <article class="research-card">
+    <div class="card-icon">🌳</div>
+    <h3>Natural Resources & Ecosystem Management</h3>
+    <p>Forestry, agriculture, rangelands, watershed management, water resources and geology.</p>
+   </article>
+
+   <article class="research-card">
+    <div class="card-icon">📚</div>
+    <h3>Environmental Education & Sustainability</h3>
+    <p>Environmental education, curriculum development, public awareness and sustainable development.</p>
+   </article>
+
+  </div>
+ </div>
 </section>
 
-<section id="committees">
-<div class="container">
-<div class="section-label">SCIENTIFIC STRUCTURE</div>
-<h2>Committees and Working Groups</h2>
-<p class="intro">The Association's scientific structure can support interdisciplinary committees and working groups. Current appointments and membership are published following formal approval.</p>
-<div class="grid">
-<div class="card"><h3>Scientific Committees</h3><p>Scientific collaboration, expert consultation and interdisciplinary initiatives.</p></div>
-<div class="card"><h3>Ethics Committee</h3><p>Review of research proposals and ethical considerations, particularly in animal research and environmental protection.</p><a href="#ethics">Explore ethics →</a></div>
-<div class="card"><h3>Working Groups</h3><p>Collaborative activities in education, research, biodiversity and sustainability.</p></div>
-</div>
-<p class="intro">Names, responsibilities and appointments of committee members will be added after official confirmation by the Association.</p>
-</div>
+<!-- COMMITTEES -->
+<section class="committees" id="committees">
+ <div class="container">
+  <div class="section-label">SCIENTIFIC ORGANIZATION</div>
+  <h2 class="section-title">Scientific Committees & Working Groups</h2>
+  <p class="section-intro">The Association supports specialized scientific groups and interdisciplinary cooperation in its areas of activity.</p>
+
+  <div class="grid three-col">
+
+   <article class="committee-card">
+    <div class="number">01 / SCIENTIFIC GROUP</div>
+    <h3>Microbiology Working Group</h3>
+    <p>Scientific exchange and research collaboration in microbiology, environmental microbiology, microbial ecology, bacterial diversity, molecular microbiology and antimicrobial resistance.</p>
+   </article>
+
+   <article class="committee-card">
+    <div class="number">02 / SCIENTIFIC GROUP</div>
+    <h3>Environmental Sciences</h3>
+    <p>Research and educational cooperation in environmental science, pollution, environmental protection and ecosystem management.</p>
+   </article>
+
+   <article class="committee-card">
+    <div class="number">03 / SCIENTIFIC GROUP</div>
+    <h3>Biodiversity & Conservation</h3>
+    <p>Scientific collaboration in biodiversity, conservation, ecology, natural habitats and biological resources.</p>
+   </article>
+
+   <article class="committee-card">
+    <div class="number">04 / SCIENTIFIC GROUP</div>
+    <h3>Environmental Education</h3>
+    <p>Educational programs, environmental awareness, public engagement and sustainable development education.</p>
+   </article>
+
+   <article class="committee-card">
+    <div class="number">05 / COMMITTEE</div>
+    <h3>Research Ethics Committee</h3>
+    <p>Research ethics, ethical review and the promotion of responsible scientific conduct.</p>
+   </article>
+
+   <article class="committee-card">
+    <div class="number">06 / SCIENTIFIC GROUP</div>
+    <h3>Natural Resources & Sustainability</h3>
+    <p>Research cooperation in natural resources, ecosystem management and sustainable development.</p>
+   </article>
+
+  </div>
+ </div>
 </section>
 
-<section class="ethics" id="ethics">
-<div class="container">
-<div class="section-label" style="color:#e2c878">A KEY SCIENTIFIC SERVICE</div>
-<h2>Research Ethics & Issuing of Codes of Ethics</h2>
-<p class="intro">The codes of ethics issued by the Ethics Committee of the Scientific Association for Environmental Education and Sustainable Development are registered in the Association's office archive.</p>
+<!-- MICROBIOLOGY FEATURE -->
+<section class="microbiology">
+ <div class="container micro-content">
+  <div class="section-label">SPECIALIZED SCIENTIFIC FIELD</div>
+  <h2 class="section-title">Microbiology Working Group</h2>
+  <p class="section-intro">Promoting scientific exchange and interdisciplinary research in microbiology and its environmental and health-related dimensions.</p>
 
-<div class="ethics-box">
-<h3>Issuing a Code of Ethics</h3>
-<p>Each issued code of ethics is valid for two years. Based on the registered list, applicants may be issued a code of ethics certificate.</p>
-<p>Certificates without the Association's hologram and embossed seal are invalid.</p>
-<div class="notice">
-<strong>Official certificate requirements</strong>
-<p>An official approval letter bearing the Association's seal and signature, together with the hologram and embossed seal, is issued to the applicant.</p>
-</div>
-</div>
-
-<div class="ethics-box">
-<h3>Understanding the Code Number</h3>
-<p class="number">MRST-CSA-EESD-14004472758-EC-20…</p>
-<p>The code format identifies the Ministry of Science, Research and Technology, the Office of the Scientific Associations Commission, the Association, its national number and the serial number registered by the Association's secretariat.</p>
-<p>The final serial number must be verified against the Association's official records.</p>
-</div>
-
-<div class="ethics-box">
-<h3>Ethical Review and Research Standards</h3>
-<p>The code indicates that the research identified in the approved application has been reviewed in relation to applicable national and international standards, including ethical treatment of animals and preservation of habitats and the environment.</p>
-<p>Applicants submit their project proposal and supporting documents to the Ethics Committee. Approval and assessment of familiarity with relevant ethical principles and regulations form part of the process.</p>
-</div>
-
-<div class="ethics-box">
-<h3>International Reference Documents</h3>
-<p>Important international standards and resources for research ethics include:</p>
-<a class="reference" href="https://oacu.oir.nih.gov/regulations-standards" target="_blank" rel="noopener">NIH OACU – Regulations and Standards ↗</a>
-<a class="reference" href="https://olaw.nih.gov/sites/default/files/PHSPolicyLabAnimals.pdf" target="_blank" rel="noopener">PHS Policy on Humane Care and Use of Laboratory Animals (PDF) ↗</a>
-<a class="reference" href="https://www.aphis.usda.gov/media/document/17164/file" target="_blank" rel="noopener">Animal Welfare Act and Animal Welfare Regulations ↗</a>
-<a class="reference" href="https://grants.nih.gov/grants/olaw/Guide-for-the-Care-and-Use-of-Laboratory-Animals.pdf" target="_blank" rel="noopener">Guide for the Care and Use of Laboratory Animals ↗</a>
-<a class="reference" href="https://www.avma.org/sites/default/files/2020-02/Guidelines-on-Euthanasia-2020.pdf" target="_blank" rel="noopener">AVMA Guidelines for the Euthanasia of Animals: 2020 Edition ↗</a>
-<a class="reference" href="https://grants.nih.gov/grants/guide/notice-files/NOT-OD-05-034.html" target="_blank" rel="noopener">Guidance on Prompt Reporting to OLAW ↗</a>
-<a class="reference" href="https://www.asas.org" target="_blank" rel="noopener">American Society of Animal Science (ASAS) ↗</a>
-<a class="reference" href="https://github.com/iraneesd/Animal-Protection-Bill/blob/prospect/README.md" target="_blank" rel="noopener">EESD Animal Protection Bill archive ↗</a>
-</div>
-
-<div class="notice">
-<strong>Important:</strong> Publication of an issued code, certificate or applicant's name on this website must be based on the Association's verified records and authorization.
-</div>
-</div>
-</section>
-
-<section class="soft" id="research">
-<div class="container">
-<div class="section-label">RESEARCH & KNOWLEDGE</div>
-<h2>Research Areas</h2>
-<p class="intro">The Association welcomes interdisciplinary interests and collaboration across the following fields.</p>
-<div class="grid">
-<div class="card"><h3>Environmental Sciences</h3><p>Environmental engineering, environmental chemistry, environmental health, pollution, ecology and environmental protection.</p></div>
-<div class="card"><h3>Biodiversity & Biology</h3><p>Biodiversity, taxonomy, biosystematics, zoology, botany, marine biology and conservation.</p></div>
-<div class="card"><h3>Natural Resources</h3><p>Forestry, agriculture, rangeland and watershed management, water resources and geology.</p></div>
-<div class="card"><h3>Environmental Education</h3><p>Education, curriculum, educational management, planning and public awareness.</p></div>
-<div class="card"><h3>Social & Environmental Studies</h3><p>Environmental law, social sciences, psychology, governance and environmental ethics.</p></div>
-<div class="card"><h3>Technology & Data</h3><p>ICT, remote sensing, geomatics, statistics, nanotechnology and related technologies.</p></div>
-</div>
-</div>
-</section>
-
-<section id="programs">
-<div class="container">
-<div class="section-label">ENGAGEMENT</div>
-<h2>Programs and Activities</h2>
-<div class="grid">
-<div class="card"><h3>Scientific Events</h3><p>Scientific meetings, seminars, conferences and expert discussions.</p></div>
-<div class="card"><h3>Educational Programs</h3><p>Environmental education, training initiatives and knowledge exchange.</p></div>
-<div class="card"><h3>Research Cooperation</h3><p>Interdisciplinary projects and cooperation with researchers and institutions.</p></div>
-</div>
-<p class="intro">Specific activities, dates, reports and outcomes will be published when documented and approved.</p>
-</div>
-</section>
-
-<section class="soft" id="publications">
-<div class="container">
-<div class="section-label">KNOWLEDGE DISSEMINATION</div>
-<h2>Publications and Resources</h2>
-<div class="grid">
-<div class="card"><h3>Scientific Publications</h3><p>Research outputs and scientific contributions associated with the Association.</p></div>
-<div class="card"><h3>Educational Resources</h3><p>Materials supporting environmental education and sustainable development.</p></div>
-<div class="card"><h3>Policy and Reference Documents</h3><p>Ethical guidance, environmental policy resources and institutional documents.</p></div>
-</div>
-</div>
-</section>
-
-<section id="animal">
-<div class="container two">
-<div>
-<div class="section-label">ANIMAL WELFARE</div>
-<h2>Animal Protection and Research Responsibility</h2>
-<p class="intro">The Association promotes awareness of animal welfare, responsible research practices, ethical treatment of animals and protection of natural habitats.</p>
-<a class="btn" style="background:var(--green);color:white" href="https://github.com/iraneesd/Animal-Protection-Bill/blob/prospect/README.md" target="_blank" rel="noopener">Read Animal Protection Bill →</a>
-</div>
-<div class="card">
-<h3>Our areas of concern</h3>
-<ul class="list">
-<li>Ethical treatment of animals in research</li>
-<li>Protection of habitats and biodiversity</li>
-<li>Responsible scientific practice</li>
-<li>Education and public awareness</li>
-<li>International ethical standards</li>
-</ul>
-</div>
-</div>
-</section>
-
-<section class="professional" id="professional">
-<div class="container">
-<div class="section-label">PROFESSIONAL CONTRIBUTIONS</div>
-<h2>Digital Operations & Scientific Communication</h2>
-<p class="intro">A dedicated area for documenting verified professional contributions to the Association's digital and scientific activities.</p>
-<div class="grid">
-<div class="card"><h3>Website Development</h3><p>Website structure, content organization, maintenance and digital presentation.</p></div>
-<div class="card"><h3>Digital Archives</h3><p>Organization of institutional records, historical materials and digital resources.</p></div>
-<div class="card"><h3>Scientific Communication</h3><p>Bilingual content preparation, research communication and knowledge dissemination.</p></div>
-<div class="card"><h3>Digital Project Coordination</h3><p>Planning and documenting digital initiatives and website updates.</p></div>
-<div class="card"><h3>Research Support</h3><p>Coordination of scientific resources, references and interdisciplinary information.</p></div>
-<div class="card"><h3>Professional Portfolio</h3><p>A record of completed projects, responsibilities and approved contributions.</p></div>
-</div>
-<div class="profile-note">
-<strong>Professional documentation:</strong>
-<p>Individual appointments, employment titles and certificates are published only after formal confirmation by the Association. This section can be used to document actual activities, dates, deliverables and approved responsibilities.</p>
-</div>
-</div>
-</section>
-
-<section id="contact">
-<div class="container two">
-<div>
-<div class="section-label">GET IN TOUCH</div>
-<h2>Contact EESD</h2>
-<p class="intro">For scientific cooperation, educational initiatives, research ethics inquiries and institutional communication, contact the Association.</p>
-</div>
-<div class="card">
-<h3>Official Contact</h3>
-<p>Email: <a href="mailto:iraneesd@yahoo.com">iraneesd@yahoo.com</a></p>
-<p>GitHub: <a href="https://github.com/iraneesd" target="_blank" rel="noopener">github.com/iraneesd</a></p>
-<p>Updated Website: <a href="https://iraneesd.github.io/eesd-website/" target="_blank" rel="noopener">EESD Website</a></p>
-<p>Historical institutional website: <a href="https://www.srttu.edu/environment/" target="_blank" rel="noopener">SR.TTU Environment</a></p>
-</div>
-</div>
-</section>
-</main>
-
-<footer>
-<div class="container">
-<h3 style="color:white">EESD</h3>
-<p>Scientific Association for Environmental Education and Sustainable Development</p>
-<p>Science · Environment · Sustainability</p>
-<hr style="border-color:#ffffff30">
-<p>© EESD. Institutional information and historical records should be maintained in accordance with the Association's approved documentation.</p>
-</div>
-</footer>
-
-<script>
-function setLanguage(language){
-const isFa=language==='fa';
-document.documentElement.lang=language;
-document.documentElement.dir=isFa?'rtl':'ltr';
-document.body.classList.toggle('fa',isFa);
-document.querySelectorAll('[data-en]').forEach(el=>{
-el.textContent=isFa?el.dataset.fa:el.dataset.en;
-});
-document.getElementById('enBtn').classList.toggle('active',!isFa);
-document.getElementById('faBtn').classList.toggle('active',isFa);
-document.title=isFa
-?'EESD | انجمن علمی آموزش محیط زیست و توسعه پایدار'
-:'EESD | Scientific Association for Environmental Education and Sustainable Development';
-}
-</script>
-</body>
-</html>
+  <div class="micro
