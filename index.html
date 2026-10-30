@@ -1,0 +1,611 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#073b32">
+<meta name="description" content="Scientific Association for Environmental Education and Sustainable Development of Iran (EESD). Advancing environmental science, biotechnology, microbiology and sustainable development.">
+<title>EESD | Scientific Association for Environmental Education and Sustainable Development</title>
+
+<style>
+:root {
+  --green:#073b32;
+  --green2:#0b5746;
+  --mint:#dff3e9;
+  --lime:#b8dc8b;
+  --ink:#172b27;
+  --muted:#65746e;
+  --paper:#f7faf7;
+  --white:#ffffff;
+  --line:#e3ebe5;
+  --gold:#c8a96b;
+  --shadow:0 18px 50px rgba(7,59,50,.09);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{font-family:Inter,"Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.65}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.container{width:min(1160px,calc(100% - 44px));margin:auto}
+.topbar{background:#052e28;color:#dcebe4;font-size:12px;padding:9px 0}
+.topbar .container{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.topbar a{color:#c9e8d5}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{height:84px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;min-width:230px}
+.brandmark{width:48px;height:48px;border-radius:15px;background:var(--green);display:grid;place-items:center;color:white;font-weight:800;font-size:15px;letter-spacing:-1px}
+.brandname{font-size:18px;font-weight:800;letter-spacing:1.5px;color:var(--green)}
+.branddesc{font-size:9px;color:var(--muted);letter-spacing:1.1px;text-transform:uppercase}
+.navlinks{display:flex;align-items:center;gap:23px;font-size:13px;font-weight:650}
+.navlinks a{color:#354740;transition:.2s}
+.navlinks a:hover{color:#16805f}
+.navright{display:flex;align-items:center;gap:12px}
+.lang{border:1px solid var(--line);border-radius:9px;padding:8px 12px;font-size:12px;font-weight:700;color:var(--green)}
+.lang.disabled{opacity:.55;cursor:default}
+.menu-toggle{display:none;background:white;border:1px solid var(--line);padding:9px 12px;border-radius:9px;color:var(--green)}
+.hero{background:linear-gradient(115deg,#052e28 0%,#0b5746 65%,#176d52 100%);color:white;position:relative;overflow:hidden;padding:100px 0 94px}
+.hero:before{content:"";position:absolute;width:540px;height:540px;border:1px solid rgba(255,255,255,.12);border-radius:50%;right:-100px;top:-220px;box-shadow:0 0 0 55px rgba(255,255,255,.025),0 0 0 110px rgba(255,255,255,.02)}
+.hero:after{content:"";position:absolute;width:320px;height:320px;background:radial-gradient(circle,rgba(184,220,139,.19),transparent 68%);right:15%;bottom:-170px}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.35fr .65fr;gap:55px;align-items:center}
+.eyebrow{font-size:11px;letter-spacing:2.3px;text-transform:uppercase;color:var(--lime);font-weight:750;display:flex;align-items:center;gap:10px}
+.eyebrow:before{content:"";width:28px;height:1px;background:var(--lime)}
+.hero h1{font-size:clamp(36px,5.2vw,65px);line-height:1.08;letter-spacing:-2.4px;margin:23px 0}
+.hero h1 span{color:var(--lime)}
+.hero p{font-size:16px;line-height:1.9;color:#d6e7df;max-width:650px}
+.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 21px;border-radius:8px;font-size:13px;font-weight:750;transition:.2s}
+.btn-primary{background:var(--lime);color:#14382c}
+.btn-primary:hover{background:white;transform:translateY(-2px)}
+.btn-outline{border:1px solid rgba(255,255,255,.4);color:white}
+.btn-outline:hover{background:rgba(255,255,255,.1)}
+.hero-card{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.19);border-radius:22px;padding:30px;backdrop-filter:blur(12px)}
+.hero-card .symbol{font-size:43px;color:var(--lime);margin-bottom:15px}
+.hero-card h3{font-size:19px;margin-bottom:12px}
+.hero-card p{font-size:13px;color:#d5e5de}
+.hero-card .rule{height:1px;background:rgba(255,255,255,.2);margin:20px 0}
+.hero-card small{color:var(--lime);letter-spacing:1.3px;text-transform:uppercase;font-weight:700}
+.section{padding:86px 0}
+.section-soft{background:var(--paper)}
+.section-head{max-width:720px;margin-bottom:38px}
+.kicker{color:#258265;text-transform:uppercase;letter-spacing:2px;font-size:10px;font-weight:800}
+.section-head h2{font-size:clamp(28px,4vw,39px);letter-spacing:-1.2px;line-height:1.2;color:var(--green);margin:12px 0}
+.section-head p{color:var(--muted);font-size:14px;line-height:1.9}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.about-copy p{color:var(--muted);font-size:14px;margin:14px 0;line-height:1.95}
+.about-panel{background:var(--green);color:white;border-radius:20px;padding:34px;position:relative;overflow:hidden}
+.about-panel:after{content:"EESD";position:absolute;right:-10px;bottom:-35px;font-size:90px;font-weight:900;color:rgba(255,255,255,.055)}
+.about-panel h3{font-size:22px;margin-bottom:14px}
+.about-panel p{color:#d7e7df;font-size:13px;line-height:1.9}
+.about-panel ul{list-style:none;margin-top:22px}
+.about-panel li{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:13px}
+.about-panel li:before{content:"✓";color:var(--lime);margin-right:10px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:white;border:1px solid var(--line);border-radius:15px;padding:26px;transition:.25s}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#b7d9c5}
+.card-icon{width:43px;height:43px;border-radius:12px;background:var(--mint);display:grid;place-items:center;font-size:20px;margin-bottom:19px}
+.card h3{font-size:16px;color:var(--green);line-height:1.4;margin-bottom:10px}
+.card p{font-size:12px;color:var(--muted);line-height:1.85}
+.card .tag{display:inline-block;margin-top:17px;font-size:10px;color:#258265;font-weight:800;letter-spacing:.8px;text-transform:uppercase}
+.committee{border-top:3px solid #4b9b70}
+.committee .year{font-size:10px;color:#27815e;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+.committee .role{font-size:11px;color:#65746e;margin-top:16px;padding-top:12px;border-top:1px solid var(--line)}
+.committee .person{font-weight:750;color:var(--green)}
+.feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.feature{border-radius:17px;padding:30px;background:#edf6ef;border:1px solid #deebe0}
+.feature.dark{background:var(--green);color:white;border-color:var(--green)}
+.feature h3{font-size:20px;margin:12px 0}
+.feature p{font-size:13px;line-height:1.9;color:var(--muted)}
+.feature.dark p{color:#d3e4dc}
+.feature ul{padding-left:18px;margin-top:17px;font-size:12px;line-height:2.1}
+.feature.dark ul{color:#d3e4dc}
+.pill{display:inline-block;border-radius:30px;background:white;color:#277353;padding:6px 11px;font-size:10px;font-weight:800}
+.feature.dark .pill{background:rgba(255,255,255,.12);color:var(--lime)}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.process{padding:22px 18px;border-left:2px solid #9bcba9;background:white}
+.process strong{display:block;color:var(--green);font-size:14px;margin-bottom:8px}
+.process p{font-size:12px;color:var(--muted);line-height:1.8}
+.banner{background:#e8f4eb;padding:55px 0}
+.banner-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}
+.banner h2{font-size:27px;color:var(--green);line-height:1.25}
+.banner p{font-size:13px;color:var(--muted);margin-top:9px}
+.banner .btn{background:var(--green);color:white}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.info{border:1px solid var(--line);padding:23px;border-radius:13px}
+.info h3{color:var(--green);font-size:15px;margin-bottom:8px}
+.info p{color:var(--muted);font-size:12px;line-height:1.8}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.contact-box{background:var(--green);border-radius:18px;padding:34px;color:white}
+.contact-box h3{font-size:22px;margin-bottom:12px}
+.contact-box p{font-size:13px;color:#d6e5de;line-height:1.9}
+.contact-note{border:1px solid var(--line);border-radius:15px;padding:27px}
+.contact-note h3{color:var(--green);margin-bottom:12px}
+.contact-note p{font-size:13px;color:var(--muted);line-height:1.9}
+footer{background:#052e28;color:#d5e5de;padding:48px 0 20px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+footer h3{font-size:16px;color:white;margin-bottom:15px}
+footer p,footer a{font-size:12px;color:#b8cdc3;line-height:2}
+footer a:hover{color:var(--lime)}
+.footer-links{display:grid;gap:4px}
+.copyright{border-top:1px solid rgba(255,255,255,.13);margin-top:35px;padding-top:18px;font-size:11px;color:#a8c0b5;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:950px){
+ .navlinks{gap:12px;font-size:11px}
+ .brand{min-width:190px}
+ .hero-grid{gap:25px}
+}
+@media(max-width:760px){
+ .container{width:min(100% - 32px,600px)}
+ .nav{height:72px}
+ .menu-toggle{display:block}
+ .navlinks{display:none;position:absolute;top:72px;left:0;right:0;background:white;padding:22px;box-shadow:var(--shadow);flex-direction:column;align-items:flex-start;font-size:14px}
+ .navlinks.open{display:flex}
+ .branddesc{font-size:8px}
+ .hero{padding:70px 0}
+ .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+ .hero-card{max-width:460px}
+ .section{padding:65px 0}
+ .cards{grid-template-columns:1fr 1fr}
+ .feature-grid{grid-template-columns:1fr}
+ .process-grid{grid-template-columns:1fr 1fr}
+ .info-grid{grid-template-columns:1fr 1fr}
+ .banner-inner{align-items:flex-start;flex-direction:column}
+ .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+ .cards,.info-grid,.process-grid,.footer-grid{grid-template-columns:1fr}
+ .hero h1{letter-spacing:-1.3px}
+ .topbar .container{font-size:10px}
+ .navright{gap:6px}
+ .lang{padding:7px 9px}
+}
+</style>
+</head>
+
+<body>
+<div class="topbar">
+  <div class="container">
+    <span>Scientific Association | Environmental Education & Sustainable Development</span>
+    <span>Iran · Scientific Cooperation · Sustainable Development</span>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="EESD Home">
+      <div class="brandmark">EESD</div>
+      <div>
+        <div class="brandname">EESD</div>
+        <div class="branddesc">Science · Environment · Sustainability</div>
+      </div>
+    </a>
+
+    <nav class="navlinks" id="navlinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#committees">Committees</a>
+      <a href="#research">Research Areas</a>
+      <a href="#programs">Programs</a>
+      <a href="#resources">Resources</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="navright">
+      <span class="lang">EN</span>
+      <span class="lang disabled" title="Persian version is being prepared">FA · Soon</span>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Scientific knowledge for a sustainable future</div>
+      <h1>Advancing Science.<br><span>Protecting Our</span><br>Shared Environment.</h1>
+      <p>
+        The Scientific Association for Environmental Education and Sustainable
+        Development of Iran (EESD) promotes scientific knowledge, interdisciplinary
+        collaboration and environmental education in support of sustainable development.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#about">Discover EESD →</a>
+        <a class="btn btn-outline" href="#research">Explore Research Areas</a>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <div class="symbol">✳</div>
+      <small>Our scientific vision</small>
+      <h3>Connecting environmental science, biological knowledge and sustainable development.</h3>
+      <p>
+        EESD provides a multidisciplinary framework for scientific exchange,
+        education and collaboration across environmental and biological sciences.
+      </p>
+      <div class="rule"></div>
+      <small>Our approach</small>
+      <p>Research · Education · Collaboration · Knowledge Exchange</p>
+    </aside>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div class="about-copy">
+      <div class="kicker">Who we are</div>
+      <div class="section-head">
+        <h2>A multidisciplinary scientific association</h2>
+        <p>
+          EESD is a scientific association established to support environmental
+          education, scientific and cultural research, professional cooperation
+          and the advancement of sustainable development.
+        </p>
+      </div>
+      <p>
+        The Association brings together scientific interests across environmental
+        sciences, biotechnology, biochemistry, environmental health, biodiversity
+        and related fields. Its multidisciplinary structure encourages dialogue
+        between researchers, educators, professionals and institutions.
+      </p>
+      <p>
+        Through scientific communication, educational initiatives and research
+        collaboration, EESD seeks to strengthen the relationship between
+        scientific knowledge and practical environmental challenges.
+      </p>
+      <a class="btn btn-primary" style="background:var(--green);color:white" href="#governance">Explore our structure →</a>
+    </div>
+    <div class="about-panel">
+      <h3>Our mission</h3>
+      <p>
+        To advance environmental awareness and sustainable development through
+        scientific education, research cooperation, knowledge exchange and
+        interdisciplinary engagement.
+      </p>
+      <ul>
+        <li>Scientific and educational development</li>
+        <li>Environmental research and awareness</li>
+        <li>Interdisciplinary scientific cooperation</li>
+        <li>Knowledge dissemination and professional exchange</li>
+        <li>Support for sustainable development</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft" id="governance">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Institutional framework</div>
+      <h2>Governance & Scientific Structure</h2>
+      <p>
+        EESD's organizational framework connects institutional governance,
+        scientific committees and specialized working groups. Official names,
+        appointments and terms are subject to the Association's approved records.
+      </p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="card-icon">⌂</div>
+        <h3>General Assembly</h3>
+        <p>The Association's principal membership and governance forum, operating under its approved statutes and regulations.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">♧</div>
+        <h3>Board of Directors</h3>
+        <p>Institutional leadership and oversight in accordance with the Association's official governance framework.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">✧</div>
+        <h3>Scientific Committees</h3>
+        <p>Specialized scientific structures supporting disciplinary focus, educational planning and research-related cooperation.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="committees">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Scientific committees</div>
+      <h2>Specialized Scientific Committees</h2>
+      <p>
+        EESD's committee structure supports its multidisciplinary mission
+        and provides a framework for scientific communication and cooperation.
+      </p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="card-icon">🧬</div>
+        <h3>Microbiology & Antimicrobial Resistance Committee</h3>
+        <p>
+          Focuses on scientific education and interdisciplinary knowledge
+          concerning microbiology, bacterial pathogens, antimicrobial resistance
+          and their relevance to environmental and public health.
+        </p>
+        <div class="year">Established / approved: 2020</div>
+        <div class="role">
+          Committee Chair<br>
+          <span class="person">[Insert official full name]</span>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-icon">🌱</div>
+        <h3>Environmental Education Committee</h3>
+        <p>Supports environmental awareness, educational initiatives and the dissemination of scientific knowledge.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">⚗</div>
+        <h3>Biotechnology & Biochemistry Committee</h3>
+        <p>Promotes scientific exchange across biotechnology, biochemistry and related biological sciences.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">🌍</div>
+        <h3>Environmental Health Committee</h3>
+        <p>Addresses scientific and educational perspectives on environmental quality, health and risk management.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">📚</div>
+        <h3>Research & Publications Committee</h3>
+        <p>Supports scientific communication, research documentation and the dissemination of scholarly outputs.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">♻</div>
+        <h3>Environmental Pollution & Sustainability Committee</h3>
+        <p>Encourages scientific dialogue on environmental pollution, sustainable technologies and resource protection.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft" id="research">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Scientific scope</div>
+      <h2>Research & Knowledge Areas</h2>
+      <p>
+        EESD's multidisciplinary scope brings together environmental,
+        biological and sustainability-related fields. The themes below
+        describe areas of scientific interest and collaboration.
+      </p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="card-icon">🦠</div>
+        <h3>Microbiology & Bacterial Pathogens</h3>
+        <p>Microbial sciences, bacterial identification, pathogen biology and scientific understanding of microorganisms.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">🧫</div>
+        <h3>Antimicrobial Resistance</h3>
+        <p>Scientific awareness of antimicrobial resistance, bacterial adaptation and the One Health perspective.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">🧬</div>
+        <h3>Molecular Biology & Biotechnology</h3>
+        <p>Molecular approaches, biotechnology, biological processes and developments in life sciences.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">💧</div>
+        <h3>Environmental Microbiology</h3>
+        <p>Microorganisms in environmental systems and the relationship between microbial processes and environmental quality.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">🌿</div>
+        <h3>Environmental Health & One Health</h3>
+        <p>Interdisciplinary understanding of the connections between human, animal and environmental health.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">🌏</div>
+        <h3>Biodiversity & Genetic Resources</h3>
+        <p>Scientific perspectives on biodiversity conservation, genetic resources and ecological sustainability.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="programs">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Specialized collaboration</div>
+      <h2>Scientific Working Groups</h2>
+      <p>
+        Working groups provide focused frameworks for scientific discussion,
+        educational development and collaboration within the Association's
+        approved areas of activity.
+      </p>
+    </div>
+    <div class="feature-grid">
+      <article class="feature dark">
+        <span class="pill">Established / approved: 2020</span>
+        <h3>Working Group on Microbiology, Bacterial Pathogens & Antimicrobial Resistance</h3>
+        <p>
+          A specialized scientific working group focused on microbiology,
+          bacterial pathogens and antimicrobial resistance within environmental
+          and public health contexts.
+        </p>
+        <ul>
+          <li>General and molecular microbiology</li>
+          <li>Bacterial pathogens and their characteristics</li>
+          <li>Antimicrobial resistance awareness and research themes</li>
+          <li>One Health and environmental health education</li>
+          <li>Scientific exchange and educational activities</li>
+        </ul>
+        <p style="margin-top:18px"><strong>Working Group Coordinator:</strong> [Insert official full name]</p>
+      </article>
+      <article class="feature">
+        <span class="pill">Interdisciplinary focus</span>
+        <h3>Environmental Biotechnology & Health</h3>
+        <p>
+          A cross-disciplinary area connecting biotechnology, environmental
+          health and sustainable development.
+        </p>
+        <ul>
+          <li>Environmental biotechnology</li>
+          <li>Biotechnology and biochemistry</li>
+          <li>Environmental pollution and risk management</li>
+          <li>Biological resources and sustainability</li>
+          <li>Scientific education and knowledge exchange</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft" id="resources">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Knowledge exchange</div>
+      <h2>Education, Publications & Scientific Resources</h2>
+      <p>
+        EESD's educational and scientific framework supports the exchange
+        and dissemination of knowledge through appropriate academic formats.
+      </p>
+    </div>
+    <div class="info-grid">
+      <article class="info">
+        <h3>Scientific Publications</h3>
+        <p>Information on verified articles, books, reports and scholarly outputs associated with the Association.</p>
+      </article>
+      <article class="info">
+        <h3>Conferences & Seminars</h3>
+        <p>Information about confirmed scientific meetings, seminars and academic events.</p>
+      </article>
+      <article class="info">
+        <h3>Workshops & Training</h3>
+        <p>Educational activities and professional knowledge-sharing opportunities.</p>
+      </article>
+      <article class="info">
+        <h3>Research Documentation</h3>
+        <p>Scientific records, research information and institutional documentation.</p>
+      </article>
+      <article class="info">
+        <h3>Projects & Initiatives</h3>
+        <p>Verified information about approved, ongoing and completed projects.</p>
+      </article>
+      <article class="info">
+        <h3>Educational Resources</h3>
+        <p>Scientific and environmental learning materials for interested audiences.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="banner">
+  <div class="container banner-inner">
+    <div>
+      <h2>Science grows through collaboration.</h2>
+      <p>Explore opportunities for scientific exchange, education and interdisciplinary cooperation.</p>
+    </div>
+    <a class="btn" href="#contact">Connect with EESD →</a>
+  </div>
+</section>
+
+<section class="section" id="membership">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Community & cooperation</div>
+      <h2>Scientific Membership & Collaboration</h2>
+      <p>
+        EESD welcomes scientific dialogue and cooperation with researchers,
+        educators, professionals and institutions whose interests align with
+        the Association's mission and approved activities.
+      </p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="card-icon">👩‍🔬</div>
+        <h3>Researchers & Academics</h3>
+        <p>Scientific exchange across environmental sciences, biological sciences and sustainability.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">🎓</div>
+        <h3>Students & Early-Career Scientists</h3>
+        <p>Educational engagement and opportunities to learn about scientific fields and activities.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">🏛</div>
+        <h3>Institutions & Organizations</h3>
+        <p>Academic and professional cooperation in areas aligned with the Association's mission.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft" id="contact">
+  <div class="container contact-grid">
+    <div>
+      <div class="kicker">Get in touch</div>
+      <div class="section-head">
+        <h2>Contact & Institutional Enquiries</h2>
+        <p>
+          For verified institutional contact details, membership enquiries,
+          scientific cooperation and educational activities, please refer
+          to EESD's officially published communication channels.
+        </p>
+      </div>
+    </div>
+    <div class="contact-box">
+      <h3>Scientific Association for Environmental Education and Sustainable Development</h3>
+      <p>
+        EESD<br>
+        Iran<br><br>
+        Official email, telephone and postal details will be added
+        after verification by the Association.
+      </p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3>EESD</h3>
+        <p>
+          Scientific Association for Environmental Education and Sustainable
+          Development of Iran. Advancing environmental education, scientific
+          cooperation and sustainable development.
+        </p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <div class="footer-links">
+          <a href="#about">About EESD</a>
+          <a href="#governance">Governance</a>
+          <a href="#committees">Scientific Committees</a>
+          <a href="#research">Research Areas</a>
+        </div>
+      </div>
+      <div>
+        <h3>Scientific Activities</h3>
+        <div class="footer-links">
+          <a href="#programs">Working Groups</a>
+          <a href="#resources">Publications & Resources</a>
+          <a href="#membership">Membership</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>© <span id="year"></span> EESD. All rights reserved.</span>
+      <span>Environmental Education · Scientific Cooperation · Sustainability</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const menuButton = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navlinks");
+
+menuButton.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => navLinks.classList.remove("open"));
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
