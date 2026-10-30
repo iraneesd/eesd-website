@@ -4,526 +4,1240 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#073e32">
+<meta name="description" content="Scientific Association for Environmental Education and Sustainable Development (EESD).">
+<meta name="theme-color" content="#073f32">
 <title>EESD | Scientific Association for Environmental Education and Sustainable Development</title>
-<meta name="description" content="Official website of the Scientific Association for Environmental Education and Sustainable Development. Research, microbiology, environmental science, ethics and sustainability.">
 
 <style>
 :root {
-  --forest:#073e32;
-  --deep:#092f29;
-  --emerald:#08785a;
-  --green:#16865e;
-  --sage:#83ad8b;
-  --mint:#e7f2e9;
-  --pale:#f4f8f4;
-  --olive:#a5a86a;
-  --gold:#d6b96a;
-  --ink:#183c32;
-  --muted:#687e74;
-  --white:#fff;
-  --border:#dce9df;
-  --shadow:0 15px 45px rgba(13,61,45,.08);
+  --forest: #073f32;
+  --deep: #062f28;
+  --emerald: #08765a;
+  --green: #15966e;
+  --mint: #d9eee4;
+  --pale: #f3f8f4;
+  --gold: #c9a85b;
+  --ink: #173b32;
+  --muted: #6c8178;
+  --white: #fff;
+  --border: #dce9e1;
+  --shadow: 0 15px 45px rgba(9,65,49,.09);
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
- font-family:Arial,Helvetica,sans-serif;
- background:var(--pale);
- color:var(--ink);
- line-height:1.75;
-}
-a{text-decoration:none;color:inherit}
-button{font:inherit;cursor:pointer}
-.container{width:min(1180px,91%);margin:auto}
+* { box-sizing:border-box; margin:0; padding:0; }
 
-/* HEADER */
-header{
- background:rgba(255,255,255,.97);
- position:sticky;top:0;z-index:1000;
- border-bottom:1px solid var(--border);
- backdrop-filter:blur(14px);
+html { scroll-behavior:smooth; scroll-padding-top:100px; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color:var(--ink);
+  background:#f7faf7;
+  line-height:1.75;
 }
-.topbar{
- min-height:92px;
- display:flex;align-items:center;
- justify-content:space-between;gap:25px;
+
+a { color:inherit; text-decoration:none; }
+
+button { font:inherit; cursor:pointer; }
+
+.container {
+  width:min(1200px, 91%);
+  margin:auto;
 }
-.brand{display:flex;align-items:center;gap:15px;min-width:270px}
-.brand img{
- width:70px;height:70px;object-fit:contain;
- border-radius:12px;
+
+header {
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
 }
-.brand-name{font-size:19px;font-weight:800;color:var(--forest)}
-.brand-name small{
- display:block;font-size:10px;letter-spacing:2px;
- color:var(--muted);font-weight:500;margin-top:3px;
+
+.nav {
+  min-height:88px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
 }
-nav{display:flex;align-items:center;gap:22px}
-nav a{
- font-size:13px;font-weight:700;color:var(--ink);
- transition:.25s;
+
+.brand {
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-width:280px;
 }
-nav a:hover{color:var(--green)}
-.header-actions{display:flex;align-items:center;gap:10px}
-.lang{
- background:white;border:1px solid var(--border);
- border-radius:30px;padding:9px 15px;
- color:var(--forest);font-weight:700;
+
+.brand img {
+  width:65px;
+  height:65px;
+  object-fit:contain;
 }
-.menu-btn{
- display:none;background:var(--forest);color:white;
- border:0;border-radius:10px;padding:9px 13px;
+
+.brand strong {
+  display:block;
+  color:var(--forest);
+  font-size:17px;
+  line-height:1.35;
+}
+
+.brand small {
+  color:var(--muted);
+  font-size:10px;
+  letter-spacing:2px;
+}
+
+.nav-links {
+  display:flex;
+  align-items:center;
+  gap:21px;
+}
+
+.nav-links a {
+  font-size:13px;
+  font-weight:700;
+  transition:.2s;
+}
+
+.nav-links a:hover { color:var(--green); }
+
+.nav-actions {
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+
+.lang {
+  border:1px solid var(--border);
+  background:white;
+  border-radius:10px;
+  padding:9px 12px;
+  color:var(--forest);
+  font-weight:bold;
+}
+
+.menu-btn {
+  display:none;
+  background:var(--forest);
+  color:white;
+  border:0;
+  border-radius:9px;
+  padding:9px 13px;
 }
 
 /* HERO */
-.hero{
- position:relative;overflow:hidden;
- background:linear-gradient(120deg,#07382e 0%,#08624b 52%,#25835b 100%);
- color:white;padding:100px 0 90px;
+
+.hero {
+  position:relative;
+  overflow:hidden;
+  min-height:590px;
+  display:flex;
+  align-items:center;
+  color:white;
+  background:
+    radial-gradient(ellipse at 90% 15%,rgba(93,190,139,.28),transparent 35%),
+    radial-gradient(ellipse at 5% 90%,rgba(28,132,94,.5),transparent 40%),
+    linear-gradient(120deg,#052e27,#075644 55%,#118060);
 }
-.hero:before{
- content:"";position:absolute;
- width:650px;height:650px;border-radius:50%;
- border:1px solid rgba(255,255,255,.12);
- right:-150px;top:-290px;
- box-shadow:0 0 0 65px rgba(255,255,255,.025),
- 0 0 0 130px rgba(255,255,255,.025);
+
+.hero::before {
+  content:"";
+  position:absolute;
+  width:550px;
+  height:550px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:50%;
+  right:-120px;
+  top:-170px;
+  box-shadow:0 0 0 55px rgba(255,255,255,.025),
+             0 0 0 110px rgba(255,255,255,.02);
 }
-.hero:after{
- content:"";position:absolute;
- width:380px;height:380px;border-radius:50%;
- background:rgba(170,204,140,.12);
- filter:blur(80px);left:-100px;bottom:-200px;
+
+.hero::after {
+  content:"";
+  position:absolute;
+  width:250px;
+  height:250px;
+  border:1px solid rgba(222,245,221,.22);
+  border-radius:50%;
+  right:12%;
+  bottom:-180px;
 }
-.hero-content{position:relative;z-index:2;max-width:850px}
-.eyebrow{
- color:#d6d99b;text-transform:uppercase;
- letter-spacing:3px;font-size:12px;
- font-weight:800;margin-bottom:22px;
+
+.hero-content {
+  position:relative;
+  z-index:2;
+  padding:95px 0;
+  max-width:850px;
 }
-.hero h1{
- font-size:clamp(35px,5vw,59px);
- line-height:1.16;letter-spacing:-1.5px;
- max-width:850px;margin-bottom:25px;
+
+.eyebrow {
+  color:#e5c77e;
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:12px;
+  font-weight:bold;
+  margin-bottom:22px;
 }
-.hero p{
- font-size:18px;color:#e0eee4;
- max-width:760px;line-height:1.9;
+
+.hero h1 {
+  font-size:clamp(34px,5vw,59px);
+  line-height:1.13;
+  letter-spacing:-1.5px;
+  margin-bottom:24px;
+  max-width:850px;
 }
-.hero-tags{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.tag{
- border:1px solid rgba(255,255,255,.3);
- border-radius:30px;padding:8px 16px;
- font-size:12px;color:#f0f5ec;
+
+.hero p {
+  color:#e1eee8;
+  font-size:18px;
+  max-width:750px;
+  line-height:1.8;
 }
-.hero-buttons{display:flex;gap:13px;flex-wrap:wrap;margin-top:35px}
-.btn{
- display:inline-block;padding:13px 23px;
- border-radius:10px;font-size:13px;
- font-weight:800;transition:.25s;
+
+.hero-tags {
+  display:flex;
+  flex-wrap:wrap;
+  gap:11px;
+  margin:30px 0;
 }
-.btn-light{background:white;color:var(--forest)}
-.btn-outline{border:1px solid rgba(255,255,255,.55);color:white}
-.btn:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+
+.hero-tags span {
+  border:1px solid rgba(255,255,255,.25);
+  padding:8px 17px;
+  border-radius:30px;
+  font-size:12px;
+  color:#edf8f0;
+  background:rgba(255,255,255,.05);
+}
+
+.actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:13px;
+}
+
+.btn {
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  padding:14px 24px;
+  border-radius:12px;
+  font-weight:bold;
+  font-size:14px;
+  transition:.25s;
+}
+
+.btn-light {
+  background:white;
+  color:var(--forest);
+}
+
+.btn-outline {
+  color:white;
+  border:1px solid rgba(255,255,255,.5);
+}
+
+.btn:hover { transform:translateY(-3px); box-shadow:var(--shadow); }
+
+.hero-note {
+  margin-top:55px;
+  padding:16px 22px;
+  border-radius:15px;
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.15);
+  display:inline-block;
+  color:#f3ead2;
+  font-size:13px;
+}
 
 /* GENERAL SECTIONS */
-section{padding:85px 0}
-.section-label{
- color:var(--emerald);font-size:11px;
- font-weight:800;letter-spacing:3px;
- text-transform:uppercase;margin-bottom:12px;
-}
-.section-title{
- color:var(--forest);
- font-size:clamp(27px,3vw,39px);
- line-height:1.25;margin-bottom:17px;
-}
-.section-intro{
- color:var(--muted);max-width:760px;
- margin-bottom:38px;font-size:16px;
-}
-.grid{display:grid;gap:22px}
-.two-col{grid-template-columns:1fr 1fr}
-.three-col{grid-template-columns:repeat(3,1fr)}
-.four-col{grid-template-columns:repeat(4,1fr)}
 
-/* ABOUT */
-.about{background:white}
-.about-text p{color:var(--muted);margin:0 0 19px}
-.mission{
- background:linear-gradient(145deg,var(--forest),#126b50);
- color:white;border-radius:22px;padding:38px;
- position:relative;overflow:hidden;
- box-shadow:var(--shadow);
-}
-.mission:after{
- content:"EESD";position:absolute;
- right:12px;bottom:-35px;font-size:100px;
- font-weight:900;color:rgba(255,255,255,.045);
-}
-.mission h3{font-size:25px;margin-bottom:16px}
-.mission p{color:#dcece1;font-size:14px}
-.mission ul{list-style:none;margin-top:25px}
-.mission li{padding:10px 0;border-bottom:1px solid #ffffff25;font-size:13px}
-.mission li:before{content:"✓";color:#d4dc92;margin-right:12px}
+section { padding:90px 0; }
 
-/* RESEARCH */
-.research{background:#eef5ef}
-.research-card{
- background:white;border:1px solid var(--border);
- border-radius:17px;padding:28px;
- min-height:220px;transition:.3s;
- box-shadow:0 5px 20px rgba(20,65,43,.025);
+.section-label {
+  color:var(--emerald);
+  font-size:11px;
+  letter-spacing:3px;
+  font-weight:bold;
+  text-transform:uppercase;
+  margin-bottom:12px;
 }
-.research-card:hover{
- transform:translateY(-7px);
- box-shadow:var(--shadow);border-color:var(--sage);
+
+.section-title {
+  font-size:clamp(28px,4vw,39px);
+  color:var(--forest);
+  line-height:1.2;
+  margin-bottom:17px;
 }
-.card-icon{
- width:48px;height:48px;border-radius:14px;
- background:var(--mint);display:grid;
- place-items:center;font-size:23px;margin-bottom:20px;
+
+.section-intro {
+  max-width:750px;
+  color:var(--muted);
+  margin-bottom:38px;
+  font-size:16px;
 }
-.research-card h3{font-size:17px;color:var(--forest);margin-bottom:12px}
-.research-card p{font-size:13px;color:var(--muted);line-height:1.8}
+
+.about-grid {
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:55px;
+  align-items:center;
+}
+
+.about-copy p {
+  color:#667b71;
+  margin:16px 0;
+}
+
+.mission {
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(140deg,#073e32,#0d7052);
+  border-radius:25px;
+  padding:40px;
+  color:white;
+  box-shadow:var(--shadow);
+}
+
+.mission::after {
+  content:"EESD";
+  position:absolute;
+  right:12px;
+  bottom:-30px;
+  font-size:90px;
+  font-weight:900;
+  color:rgba(255,255,255,.055);
+}
+
+.mission h3 { font-size:25px; margin-bottom:16px; }
+.mission p { color:#e1f0e8; }
+
+.mission ul {
+  list-style:none;
+  margin-top:25px;
+}
+
+.mission li {
+  border-bottom:1px solid rgba(255,255,255,.14);
+  padding:11px 0;
+  font-size:14px;
+}
+
+.mission li::before {
+  content:"✓";
+  color:#d7d08b;
+  margin-right:12px;
+}
+
+/* STATISTICS */
+
+.stats {
+  background:#eaf3ed;
+  padding:35px 0;
+}
+
+.stats-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  text-align:center;
+  gap:20px;
+}
+
+.stat strong {
+  display:block;
+  color:var(--emerald);
+  font-size:27px;
+}
+
+.stat span {
+  font-size:13px;
+  color:var(--muted);
+}
 
 /* COMMITTEES */
-.committees{background:white}
-.committee-card{
- padding:26px;border:1px solid var(--border);
- border-radius:15px;background:linear-gradient(145deg,#fff,#f7faf7);
-}
-.committee-card h3{color:var(--forest);font-size:17px;margin-bottom:10px}
-.committee-card p{color:var(--muted);font-size:13px}
-.committee-card .number{
- color:var(--green);font-size:12px;font-weight:800;
- letter-spacing:2px;margin-bottom:15px;
+
+.committee-grid,.research-grid,.program-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
 }
 
-/* MICROBIOLOGY FEATURE */
-.microbiology{
- background:linear-gradient(120deg,#073a30,#0d654a 65%,#43835a);
- color:white;position:relative;overflow:hidden;
+.card {
+  background:white;
+  padding:29px;
+  border:1px solid var(--border);
+  border-radius:19px;
+  transition:.3s;
+  box-shadow:0 5px 20px rgba(10,60,45,.025);
 }
-.microbiology:after{
- content:"";position:absolute;width:480px;height:480px;
- border:1px solid #ffffff24;border-radius:50%;
- right:-130px;top:-150px;
- box-shadow:0 0 0 55px #ffffff09,0 0 0 110px #ffffff06;
+
+.card:hover {
+  transform:translateY(-6px);
+  box-shadow:var(--shadow);
+  border-color:#a8cfb8;
 }
-.micro-content{position:relative;z-index:2}
-.microbiology .section-label{color:#d9d99c}
-.microbiology .section-title{color:white}
-.microbiology .section-intro{color:#d7e9dc}
-.micro-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px}
-.micro-panel{
- background:#ffffff12;border:1px solid #ffffff35;
- border-radius:18px;padding:30px;
- backdrop-filter:blur(10px);
+
+.card-icon {
+  width:48px;
+  height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#e7f3eb;
+  color:var(--emerald);
+  border-radius:14px;
+  font-size:23px;
+  margin-bottom:20px;
 }
-.micro-panel h3{font-size:20px;margin-bottom:15px}
-.micro-panel p{font-size:14px;color:#e2eee4}
-.micro-panel ul{padding-left:20px;margin-top:18px}
-.micro-panel li{font-size:13px;margin:8px 0;color:#e6f0e8}
-.since{
- display:inline-block;background:#dce9bd;color:#184b37;
- border-radius:30px;padding:7px 15px;
- font-weight:800;font-size:12px;margin-bottom:20px;
+
+.card h3 {
+  font-size:18px;
+  color:var(--forest);
+  margin-bottom:12px;
+}
+
+.card p {
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.8;
+}
+
+.card a {
+  display:inline-block;
+  margin-top:17px;
+  font-size:13px;
+  color:var(--emerald);
+  font-weight:bold;
+}
+
+/* RESEARCH AREAS */
+
+.research-section {
+  background:linear-gradient(180deg,#f0f7f2,#eaf3ed);
+}
+
+.research-grid .card {
+  min-height:235px;
+}
+
+.research-grid .card-icon {
+  background:linear-gradient(135deg,#e2f2e7,#c7e7d4);
+}
+
+.research-tag {
+  display:inline-block;
+  font-size:10px;
+  letter-spacing:1px;
+  color:var(--emerald);
+  background:#e8f4ec;
+  border-radius:30px;
+  padding:5px 10px;
+  margin-bottom:13px;
+}
+
+/* MICROBIOLOGY CARD */
+
+.micro-card {
+  background:linear-gradient(145deg,#ffffff,#edf7f0);
+  border:1px solid #c8e1d1;
+  position:relative;
+}
+
+.micro-card::before {
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:4px;
+  background:linear-gradient(90deg,#0a5742,#39a77a,#b2d8a4);
+  border-radius:20px 20px 0 0;
+}
+
+.micro-visual {
+  width:75px;
+  height:75px;
+  border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#d5efdb,#8bc9a4 55%,#237956);
+  display:grid;
+  place-items:center;
+  margin-bottom:18px;
+  color:white;
+  font-size:33px;
+  box-shadow:inset 0 0 0 7px rgba(255,255,255,.3);
 }
 
 /* ETHICS */
-.ethics{background:#f3f7f2}
-.ethics-main{
- background:white;border-radius:20px;padding:38px;
- border:1px solid var(--border);box-shadow:var(--shadow);
-}
-.ethics-main p{color:var(--muted);font-size:14px;margin:15px 0}
-.ethics-notice{
- background:#e9f2e7;border-left:4px solid var(--emerald);
- padding:17px 20px;border-radius:5px;
- font-size:13px;color:var(--forest);margin-top:20px;
-}
-.resource-list{
- display:grid;grid-template-columns:1fr 1fr;
- gap:12px;margin-top:25px;
-}
-.resource{
- display:block;padding:15px;
- border:1px solid var(--border);
- border-radius:10px;background:white;
- color:var(--forest);font-size:13px;
- transition:.2s;
-}
-.resource:hover{background:var(--mint);border-color:var(--sage)}
 
-/* ACTIVITIES */
-.activity-card{
- border-radius:17px;background:white;
- padding:27px;border:1px solid var(--border);
+.ethics-section {
+  background:linear-gradient(135deg,#073e32,#0b634b);
+  color:white;
+  position:relative;
+  overflow:hidden;
 }
-.activity-card h3{font-size:17px;color:var(--forest);margin-bottom:12px}
-.activity-card p{font-size:13px;color:var(--muted)}
-.activity-card .card-icon{background:#eaf3e8}
 
-/* FOOTER */
-.contact{
- background:var(--deep);color:white;padding:70px 0;
+.ethics-section::before {
+  content:"";
+  position:absolute;
+  width:450px;
+  height:450px;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:50%;
+  right:-130px;
+  top:-180px;
+  box-shadow:0 0 0 50px rgba(255,255,255,.025),
+             0 0 0 100px rgba(255,255,255,.02);
 }
-.contact .section-title{color:white}
-.contact p{color:#d0e1d5}
-.contact a{color:#d7df9f}
-.footer-bottom{
- border-top:1px solid #ffffff25;
- margin-top:45px;padding-top:22px;
- color:#b7c9bb;font-size:12px;
+
+.ethics-content {
+  position:relative;
+  z-index:1;
 }
-.footer-links{display:flex;flex-wrap:wrap;gap:20px;margin-top:25px}
-.footer-links a{font-size:13px}
-footer{text-align:center;padding:18px;background:#05271f;color:#c1d3c5;font-size:11px}
 
-/* LANGUAGE */
-html[dir="rtl"] body{font-family:Tahoma,Arial,sans-serif}
-html[dir="rtl"] .mission li:before{margin-right:0;margin-left:12px}
-html[dir="rtl"] .ethics-notice{border-left:0;border-right:4px solid var(--emerald)}
-html[dir="rtl"] .resource-list{text-align:right}
+.ethics-section .section-title { color:white; }
 
-/* RESPONSIVE */
-@media(max-width:950px){
- nav{
-  display:none;position:absolute;top:92px;left:0;right:0;
-  background:white;padding:20px 5%;
-  flex-direction:column;align-items:flex-start;
+.ethics-section .section-intro { color:#d5e9df; }
+
+.ethics-box {
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.17);
+  border-radius:22px;
+  padding:35px;
+  margin-top:25px;
+}
+
+.ethics-box h3 {
+  color:#e8d28e;
+  font-size:21px;
+  margin-bottom:17px;
+}
+
+.ethics-box p {
+  color:#e4efe9;
+  font-size:14px;
+  margin:14px 0;
+}
+
+.ethics-box ul {
+  padding-left:22px;
+  color:#e3eee7;
+  font-size:14px;
+}
+
+.ethics-box li { margin:10px 0; }
+
+.ethics-code {
+  background:rgba(0,0,0,.17);
+  border:1px solid rgba(255,255,255,.16);
+  padding:17px;
+  border-radius:12px;
+  margin:20px 0;
+  color:#f3dfaa;
+  overflow-wrap:anywhere;
+  font-size:14px;
+}
+
+.resource-links {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-top:20px;
+}
+
+.resource-links a {
+  padding:12px 15px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.05);
+  font-size:12px;
+  color:white;
+  transition:.2s;
+}
+
+.resource-links a:hover {
+  background:rgba(255,255,255,.15);
+}
+
+/* PROGRAMS */
+
+.program-grid .card { min-height:190px; }
+
+/* CONTACT */
+
+.contact-section { background:#edf5ef; }
+
+.contact-box {
+  background:white;
+  border-radius:23px;
+  padding:40px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:35px;
+  box-shadow:var(--shadow);
+}
+
+.contact-box h3 {
+  color:var(--forest);
+  font-size:25px;
+  margin-bottom:12px;
+}
+
+.contact-box p {
+  color:var(--muted);
+  margin-bottom:14px;
+}
+
+.contact-link {
+  display:block;
+  padding:12px 0;
   border-bottom:1px solid var(--border);
- }
- nav.open{display:flex}
- .menu-btn{display:block}
- .three-col{grid-template-columns:repeat(2,1fr)}
- .four-col{grid-template-columns:repeat(2,1fr)}
+  color:var(--emerald);
+  overflow-wrap:anywhere;
 }
-@media(max-width:650px){
- .brand{min-width:0}
- .brand img{width:55px;height:55px}
- .brand-name{font-size:14px}
- .brand-name small{font-size:8px}
- .hero{padding:75px 0}
- section{padding:60px 0}
- .two-col,.three-col,.four-col,.micro-grid{grid-template-columns:1fr}
- .resource-list{grid-template-columns:1fr}
- .mission,.ethics-main{padding:25px}
+
+footer {
+  background:var(--deep);
+  color:#d7e8df;
+  padding:35px 0;
 }
+
+.footer-grid {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+footer p { font-size:12px; color:#b6cfc2; }
+
+.footer-links {
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+  font-size:12px;
+}
+
+/* MOBILE */
+
+@media(max-width:1000px) {
+  .nav-links {
+    gap:12px;
+  }
+  .nav-links a { font-size:11px; }
+  .brand { min-width:220px; }
+}
+
+@media(max-width:800px) {
+  .menu-btn { display:block; }
+  .nav { min-height:75px; }
+  .brand img { width:52px; height:52px; }
+  .brand strong { font-size:13px; }
+
+  .nav-links {
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    background:white;
+    padding:20px 5%;
+    border-bottom:1px solid var(--border);
+    box-shadow:var(--shadow);
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .nav-links.open { display:flex; }
+  .nav-links a { font-size:14px; width:100%; padding:5px 0; }
+
+  .about-grid,.contact-box {
+    grid-template-columns:1fr;
+  }
+
+  .committee-grid,.research-grid,.program-grid {
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .hero { min-height:540px; }
+  .hero-content { padding:75px 0; }
+}
+
+@media(max-width:520px) {
+  section { padding:65px 0; }
+  .committee-grid,.research-grid,.program-grid {
+    grid-template-columns:1fr;
+  }
+  .stats-grid { grid-template-columns:1fr; }
+  .hero h1 { font-size:35px; }
+  .hero p { font-size:15px; }
+  .mission,.ethics-box,.contact-box { padding:25px; }
+  .resource-links { grid-template-columns:1fr; }
+  .brand small { letter-spacing:1px; }
+}
+
+/* PERSIAN DIRECTION */
+
+body.fa { direction:rtl; }
+body.fa .section-label { letter-spacing:0; }
+body.fa .mission li::before { margin-right:0; margin-left:12px; }
+body.fa .ethics-box ul { padding-left:0; padding-right:22px; }
+body.fa .brand small { letter-spacing:0; }
 </style>
 </head>
 
 <body>
 
 <header>
- <div class="container topbar">
-  <a class="brand" href="#home">
-   <img src="logo.jfif" alt="Official EESD Logo">
-   <span class="brand-name">
-    Scientific Association for Environmental Education and Sustainable Development
-    <small>EESD · SCIENCE · ENVIRONMENT · SUSTAINABILITY</small>
-   </span>
-  </a>
+  <div class="container nav">
 
-  <nav id="nav">
-   <a href="#home" data-en="Home" data-fa="خانه">Home</a>
-   <a href="#about" data-en="About" data-fa="درباره انجمن">About</a>
-   <a href="#research" data-en="Research Areas" data-fa="حوزه‌های پژوهشی">Research Areas</a>
-   <a href="#committees" data-en="Committees" data-fa="کارگروه‌ها">Committees</a>
-   <a href="#ethics" data-en="Research Ethics" data-fa="اخلاق پژوهش">Research Ethics</a>
-   <a href="#activities" data-en="Activities" data-fa="فعالیت‌ها">Activities</a>
-   <a href="#contact" data-en="Contact" data-fa="ارتباط با ما">Contact</a>
-  </nav>
+    <a href="#home" class="brand">
+      <img src="logo.jfif" alt="Official EESD Logo">
+      <div>
+        <strong>Scientific Association for Environmental Education and Sustainable Development</strong>
+        <div style="font-size:20px;font-weight:900;color:#12805f;letter-spacing:2px">EESD</div>
+        <small>SCIENCE · ENVIRONMENT · SUSTAINABILITY</small>
+      </div>
+    </a>
 
-  <div class="header-actions">
-   <button class="lang" id="langBtn" onclick="toggleLang()">FA</button>
-   <button class="menu-btn" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    <nav class="nav-links" id="navigation">
+      <a href="#home" data-en="Home" data-fa="صفحه اصلی">Home</a>
+      <a href="#about" data-en="About" data-fa="درباره ما">About</a>
+      <a href="#committees" data-en="Committees" data-fa="کمیته‌ها">Committees</a>
+      <a href="#research" data-en="Research Areas" data-fa="حوزه‌های پژوهشی">Research Areas</a>
+      <a href="#ethics" data-en="Research Ethics" data-fa="اخلاق پژوهش">Research Ethics</a>
+      <a href="#programs" data-en="Programs" data-fa="برنامه‌ها">Programs</a>
+      <a href="#contact" data-en="Contact" data-fa="تماس">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="lang" id="languageButton" onclick="toggleLanguage()">FA</button>
+      <button class="menu-btn" onclick="toggleMenu()" aria-label="Open navigation">☰</button>
+    </div>
+
   </div>
- </div>
 </header>
 
 <main>
 
-<!-- HERO -->
+<!-- HOME -->
+
 <section class="hero" id="home">
- <div class="container hero-content">
-  <div class="eyebrow" data-en="WELCOME TO EESD" data-fa="به انجمن علمی EESD خوش آمدید">WELCOME TO EESD</div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="eyebrow">WELCOME TO EESD</div>
 
-  <h1 data-en="Scientific Association for Environmental Education and Sustainable Development"
-  data-fa="انجمن علمی آموزش محیط زیست و توسعه پایدار">
-  Scientific Association for Environmental Education and Sustainable Development
-  </h1>
+      <h1>Scientific Association for Environmental Education and Sustainable Development</h1>
 
-  <p data-en="A scientific, non-governmental and non-profit association bringing together education, research and professional cooperation to support a sustainable environment."
-  data-fa="انجمنی علمی، غیردولتی و غیرانتفاعی برای گسترش آموزش، پژوهش و همکاری تخصصی در راستای محیط زیست پایدار.">
-  A scientific, non-governmental and non-profit association bringing together education, research and professional cooperation to support a sustainable environment.
-  </p>
+      <p>
+        A scientific, non-governmental and non-profit association bringing together
+        education, research and professional cooperation to support a sustainable environment.
+      </p>
 
-  <div class="hero-tags">
-   <span class="tag">Established 8/10/2012</span>
-   <span class="tag">Scientific Association</span>
-   <span class="tag">EESD</span>
+      <div class="hero-tags">
+        <span>Established 8/10/2012</span>
+        <span>Scientific Association</span>
+        <span>Environmental Research</span>
+        <span>EESD</span>
+      </div>
+
+      <div class="actions">
+        <a href="#about" class="btn btn-light">Discover the Association →</a>
+        <a href="#ethics" class="btn btn-outline">Research Ethics</a>
+      </div>
+
+      <div class="hero-note">
+        Advancing scientific knowledge, environmental responsibility and sustainable development.
+      </div>
+    </div>
   </div>
-
-  <div class="hero-buttons">
-   <a class="btn btn-light" href="#about" data-en="Discover the Association →" data-fa="آشنایی با انجمن ←">Discover the Association →</a>
-   <a class="btn btn-outline" href="#ethics" data-en="Research Ethics" data-fa="اخلاق پژوهش">Research Ethics</a>
-  </div>
- </div>
 </section>
 
 <!-- ABOUT -->
-<section class="about" id="about">
- <div class="container grid two-col">
-  <div class="about-text">
-   <div class="section-label">WHO WE ARE</div>
-   <h2 class="section-title" data-en="A multidisciplinary scientific association" data-fa="یک انجمن علمی چندرشته‌ای">A multidisciplinary scientific association</h2>
-   <p data-en="The Scientific Association for Environmental Education and Sustainable Development is a non-governmental, non-profit scientific organization established to promote environmental knowledge, education, research and sustainable development."
-   data-fa="انجمن علمی آموزش محیط زیست و توسعه پایدار، سازمانی علمی، غیردولتی و غیرانتفاعی است که با هدف گسترش دانش محیط زیست، آموزش، پژوهش و توسعه پایدار تأسیس شده است.">
-   The Scientific Association for Environmental Education and Sustainable Development is a non-governmental, non-profit scientific organization established to promote environmental knowledge, education, research and sustainable development.
-   </p>
-   <p data-en="The Association encourages scientific exchange, interdisciplinary collaboration, professional development and the dissemination of research findings through educational and research activities."
-   data-fa="انجمن از تبادل علمی، همکاری میان‌رشته‌ای، توسعه تخصصی و انتشار دستاوردهای پژوهشی از طریق فعالیت‌های آموزشی و تحقیقاتی حمایت می‌کند.">
-   The Association encourages scientific exchange, interdisciplinary collaboration, professional development and the dissemination of research findings through educational and research activities.
-   </p>
-   <p data-en="Its activities are guided by its approved statutes and the objectives of scientific associations."
-   data-fa="فعالیت‌های انجمن بر اساس اساسنامه مصوب و اهداف انجمن‌های علمی انجام می‌شود.">
-   Its activities are guided by its approved statutes and the objectives of scientific associations.
-   </p>
-  </div>
 
-  <div class="mission">
-   <h3>Our Mission</h3>
-   <p>To advance environmental awareness and sustainable development through scientific education, research cooperation, knowledge exchange and interdisciplinary engagement.</p>
-   <ul>
-    <li>Scientific and educational development</li>
-    <li>Environmental research and awareness</li>
-    <li>Interdisciplinary scientific cooperation</li>
-    <li>Knowledge dissemination and professional exchange</li>
-    <li>Support for sustainable development</li>
-   </ul>
+<section id="about">
+  <div class="container about-grid">
+
+    <div class="about-copy">
+      <div class="section-label">WHO WE ARE</div>
+      <h2 class="section-title">A multidisciplinary scientific association</h2>
+
+      <p>
+        The Scientific Association for Environmental Education and Sustainable Development
+        (EESD) is established to support environmental education, scientific and cultural
+        research, professional cooperation and the advancement of sustainable development.
+      </p>
+
+      <p>
+        The Association brings together scientific interests across environmental sciences,
+        biotechnology, biochemistry, environmental health, biodiversity and related fields.
+        Its multidisciplinary structure encourages dialogue between researchers, educators,
+        professionals and institutions.
+      </p>
+
+      <p>
+        Through scientific communication, educational initiatives and research collaboration,
+        EESD seeks to strengthen the relationship between scientific knowledge and practical
+        environmental challenges.
+      </p>
+
+      <a href="#committees" class="btn" style="background:var(--forest);color:white">
+        Explore our structure →
+      </a>
+    </div>
+
+    <div class="mission">
+      <h3>Our Mission</h3>
+      <p>
+        To advance environmental awareness and sustainable development through scientific
+        education, research cooperation, knowledge exchange and interdisciplinary engagement.
+      </p>
+      <ul>
+        <li>Scientific and educational development</li>
+        <li>Environmental research and awareness</li>
+        <li>Interdisciplinary scientific cooperation</li>
+        <li>Knowledge dissemination and professional exchange</li>
+        <li>Support for sustainable development</li>
+      </ul>
+    </div>
+
   </div>
- </div>
+</section>
+
+<!-- STATS -->
+
+<div class="stats">
+  <div class="container stats-grid">
+    <div class="stat">
+      <strong>2012</strong>
+      <span>Year of Establishment</span>
+    </div>
+    <div class="stat">
+      <strong>Multidisciplinary</strong>
+      <span>Scientific Structure</span>
+    </div>
+    <div class="stat">
+      <strong>EESD</strong>
+      <span>Scientific Association</span>
+    </div>
+  </div>
+</div>
+
+<!-- COMMITTEES -->
+
+<section id="committees">
+  <div class="container">
+    <div class="section-label">OUR STRUCTURE</div>
+    <h2 class="section-title">Scientific Committees</h2>
+    <p class="section-intro">
+      The Association supports scientific collaboration through specialized committees
+      and interdisciplinary working groups.
+    </p>
+
+    <div class="committee-grid">
+
+      <article class="card">
+        <div class="card-icon">🌿</div>
+        <h3>Environmental Sciences Committee</h3>
+        <p>Research, education and scientific cooperation in environmental sciences and protection.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🧬</div>
+        <h3>Microbiology Working Group</h3>
+        <p>Scientific activities and interdisciplinary research in microbiology and related environmental and health sciences.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">⚖️</div>
+        <h3>Ethics Committee</h3>
+        <p>Scientific ethics, research integrity and ethical review of research proposals.</p>
+        <a href="#ethics">Explore research ethics →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🐾</div>
+        <h3>Animal Protection</h3>
+        <p>Animal welfare, ethical research practices and environmental responsibility.</p>
+        <a href="https://github.com/iraneesd/Animal-Protection-Bill/blob/prospect/README.md" target="_blank" rel="noopener">Animal Protection Resources →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🌍</div>
+        <h3>Biodiversity Committee</h3>
+        <p>Scientific interests in biodiversity, conservation, ecosystems and biological resources.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📚</div>
+        <h3>Education and Research</h3>
+        <p>Educational initiatives, research communication and scientific knowledge exchange.</p>
+      </article>
+
+    </div>
+  </div>
 </section>
 
 <!-- RESEARCH AREAS -->
-<section class="research" id="research">
- <div class="container">
-  <div class="section-label">SCIENTIFIC SCOPE</div>
-  <h2 class="section-title">Research Areas</h2>
-  <p class="section-intro">The Association welcomes interdisciplinary interests and collaboration across the following scientific fields.</p>
 
-  <div class="grid four-col">
+<section class="research-section" id="research">
+  <div class="container">
 
-   <article class="research-card">
-    <div class="card-icon">🧫</div>
-    <h3>Environmental Microbiology & Microbial Ecology</h3>
-    <p>Microbial diversity, environmental microorganisms, microbial ecology, ecosystem interactions and environmental biotechnology.</p>
-   </article>
+    <div class="section-label">SCIENTIFIC DOMAINS</div>
+    <h2 class="section-title">Research Areas</h2>
 
-   <article class="research-card">
-    <div class="card-icon">🔬</div>
-    <h3>Microbiology & Antimicrobial Resistance</h3>
-    <p>Bacterial diversity, antimicrobial resistance, bacterial pathogens, molecular microbiology and microbial health research.</p>
-   </article>
+    <p class="section-intro">
+      The Association welcomes interdisciplinary scientific interests and collaboration
+      across the following fields.
+    </p>
 
-   <article class="research-card">
-    <div class="card-icon">🧬</div>
-    <h3>Molecular Biology & Biotechnology</h3>
-    <p>Molecular diagnostics, microbial genetics, biotechnology, genomics and applied biological research.</p>
-   </article>
+    <div class="research-grid">
 
-   <article class="research-card">
-    <div class="card-icon">🌱</div>
-    <h3>Environmental Health & One Health</h3>
-    <p>Environmental health, microbial hazards, public health, ecosystem health and the relationship between human, animal and environmental health.</p>
-   </article>
+      <article class="card">
+        <div class="card-icon">🌱</div>
+        <span class="research-tag">ENVIRONMENT</span>
+        <h3>Environmental Sciences</h3>
+        <p>Environmental engineering, environmental chemistry, environmental health, pollution, ecology and environmental protection.</p>
+      </article>
 
-   <article class="research-card">
-    <div class="card-icon">🦋</div>
-    <h3>Biodiversity & Conservation Biology</h3>
-    <p>Taxonomy, biosystematics, zoology, botany, marine biology, biodiversity and conservation.</p>
-   </article>
+      <article class="card">
+        <div class="card-icon">🧫</div>
+        <span class="research-tag">LIFE SCIENCES</span>
+        <h3>Biodiversity & Biology</h3>
+        <p>Biodiversity, taxonomy, biosystematics, zoology, botany, marine biology and conservation.</p>
+      </article>
 
-   <article class="research-card">
-    <div class="card-icon">🌍</div>
-    <h3>Environmental Sciences & Pollution</h3>
-    <p>Environmental engineering, pollution, environmental chemistry, ecology and environmental protection.</p>
-   </article>
+      <article class="card">
+        <div class="card-icon">🌳</div>
+        <span class="research-tag">NATURAL RESOURCES</span>
+        <h3>Natural Resources</h3>
+        <p>Forestry, agriculture, rangeland and watershed management, water resources and geology.</p>
+      </article>
 
-   <article class="research-card">
-    <div class="card-icon">🌳</div>
-    <h3>Natural Resources & Ecosystem Management</h3>
-    <p>Forestry, agriculture, rangelands, watershed management, water resources and geology.</p>
-   </article>
+      <article class="card">
+        <div class="card-icon">🎓</div>
+        <span class="research-tag">EDUCATION</span>
+        <h3>Environmental Education</h3>
+        <p>Education, curriculum, educational management, planning and public awareness.</p>
+      </article>
 
-   <article class="research-card">
-    <div class="card-icon">📚</div>
-    <h3>Environmental Education & Sustainability</h3>
-    <p>Environmental education, curriculum development, public awareness and sustainable development.</p>
-   </article>
+      <article class="card">
+        <div class="card-icon">⚖️</div>
+        <span class="research-tag">SOCIAL SCIENCES</span>
+        <h3>Social & Environmental Studies</h3>
+        <p>Environmental law, social sciences, psychology, governance and environmental ethics.</p>
+      </article>
 
+      <article class="card">
+        <div class="card-icon">🔬</div>
+        <span class="research-tag">TECHNOLOGY</span>
+        <h3>Technology & Data</h3>
+        <p>ICT, remote sensing, geomatics, statistics, nanotechnology and related technologies.</p>
+      </article>
+
+      <!-- NEW MICROBIOLOGY RESEARCH AREA -->
+
+      <article class="card micro-card">
+        <div class="micro-visual">🧬</div>
+        <span class="research-tag">MICROBIOLOGICAL SCIENCES</span>
+        <h3>Microbiology & Antimicrobial Resistance</h3>
+        <p>
+          Microbiology, bacterial diversity, antimicrobial resistance,
+          antibiotic susceptibility and environmental microbiology.
+        </p>
+      </article>
+
+    </div>
   </div>
- </div>
 </section>
 
-<!-- COMMITTEES -->
-<section class="committees" id="committees">
- <div class="container">
-  <div class="section-label">SCIENTIFIC ORGANIZATION</div>
-  <h2 class="section-title">Scientific Committees & Working Groups</h2>
-  <p class="section-intro">The Association supports specialized scientific groups and interdisciplinary cooperation in its areas of activity.</p>
+<!-- RESEARCH ETHICS -->
 
-  <div class="grid three-col">
+<section class="ethics-section" id="ethics">
+  <div class="container ethics-content">
 
-   <article class="committee-card">
-    <div class="number">01 / SCIENTIFIC GROUP</div>
-    <h3>Microbiology Working Group</h3>
-    <p>Scientific exchange and research collaboration in microbiology, environmental microbiology, microbial ecology, bacterial diversity, molecular microbiology and antimicrobial resistance.</p>
-   </article>
+    <div class="section-label" style="color:#e4cf91">SCIENTIFIC RESPONSIBILITY</div>
 
-   <article class="committee-card">
-    <div class="number">02 / SCIENTIFIC GROUP</div>
-    <h3>Environmental Sciences</h3>
-    <p>Research and educational cooperation in environmental science, pollution, environmental protection and ecosystem management.</p>
-   </article>
+    <h2 class="section-title">Research Ethics & Code of Ethics</h2>
 
-   <article class="committee-card">
-    <div class="number">03 / SCIENTIFIC GROUP</div>
-    <h3>Biodiversity & Conservation</h3>
-    <p>Scientific collaboration in biodiversity, conservation, ecology, natural habitats and biological resources.</p>
-   </article>
+    <p class="section-intro">
+      Ethical research, responsible scientific conduct and the protection
+      of animals and the environment are important activities of the Association.
+    </p>
 
-   <article class="committee-card">
-    <div class="number">04 / SCIENTIFIC GROUP</div>
-    <h3>Environmental Education</h3>
-    <p>Educational programs, environmental awareness, public engagement and sustainable development education.</p>
-   </article>
+    <div class="ethics-box">
 
-   <article class="committee-card">
-    <div class="number">05 / COMMITTEE</div>
-    <h3>Research Ethics Committee</h3>
-    <p>Research ethics, ethical review and the promotion of responsible scientific conduct.</p>
-   </article>
+      <h3>Issuing a Code of Ethics</h3>
 
-   <article class="committee-card">
-    <div class="number">06 / SCIENTIFIC GROUP</div>
-    <h3>Natural Resources & Sustainability</h3>
-    <p>Research cooperation in natural resources, ecosystem management and sustainable development.</p>
-   </article>
+      <p>
+        The codes of ethics issued by the Ethics Committee of the Scientific Association
+        for Environmental Education and Sustainable Development are included in this list.
+        The archive number of the codes of ethics in this list is registered in the
+        Association's office. Each issued code of ethics is valid for two years.
+      </p>
 
+      <p>
+        Based on this list, applicants are issued with a code of ethics certificate.
+        Certificates that do not have the Association's hologram and embossed seal are invalid.
+      </p>
+
+      <h3>Official Identification of Ethical Codes</h3>
+
+      <p>
+        The code of ethics is issued by the Ethics Committee with the following
+        specifications, accompanied by an official approval letter bearing the
+        Association's seal and signature, a hologram and an embossed seal.
+      </p>
+
+      <div class="ethics-code">
+        MRST-CSA-EESD-14004472758-EC-20…
+      </div>
+
+      <p>
+        The abbreviations refer to the Ministry of Science, Research and Technology,
+        the Office of the Scientific Associations Commission, the Scientific Association
+        for Environmental Education and Sustainable Development, the national number
+        of the Association and the serial number of its secretariat.
+      </p>
+
+      <h3>Issued Ethical Codes</h3>
+
+      <p>
+        This code indicates that the research described in the relevant application
+        has been conducted in accordance with accepted international and national
+        standards, adhering to the principles of ethical treatment of animals
+        and the preservation of habitats and the environment.
+      </p>
+
+      <p>
+        Applicants submit their project proposals and supporting documents to the
+        Association's Ethics Committee. The documents and proposals are reviewed
+        by the Committee, and applicants' familiarity with relevant ethical
+        principles and regulations is assessed.
+      </p>
+
+      <h3>International Guidelines and Resources</h3>
+
+      <div class="resource-links">
+
+        <a href="https://oacu.oir.nih.gov/regulations-standards" target="_blank" rel="noopener">
+          NIH OACU – Regulations & Standards ↗
+        </a>
+
+        <a href="https://olaw.nih.gov/sites/default/files/PHSPolicyLabAnimals.pdf" target="_blank" rel="noopener">
+          PHS Policy on Laboratory Animals ↗
+        </a>
+
+        <a href="https://www.aphis.usda.gov/media/document/17164/file" target="_blank" rel="noopener">
+          Animal Welfare Act & Regulations ↗
+        </a>
+
+        <a href="https://grants.nih.gov/grants/olaw/Guide-for-the-Care-and-Use-of-Laboratory-Animals.pdf" target="_blank" rel="noopener">
+          Guide for the Care and Use of Laboratory Animals ↗
+        </a>
+
+        <a href="https://www.avma.org/sites/default/files/2020-02/Guidelines-on-Euthanasia-2020.pdf" target="_blank" rel="noopener">
+          AVMA Guidelines for Euthanasia ↗
+        </a>
+
+        <a href="https://grants.nih.gov/grants/guide/notice-files/NOT-OD-05-034.html" target="_blank" rel="noopener">
+          OLAW – Prompt Reporting Guidance ↗
+        </a>
+
+        <a href="https://www.asas.org" target="_blank" rel="noopener">
+          American Society of Animal Science ↗
+        </a>
+
+        <a href="https://github.com/iraneesd/Animal-Protection-Bill/blob/prospect/README.md" target="_blank" rel="noopener">
+          EESD Animal Protection Resources ↗
+        </a>
+
+      </div>
+
+    </div>
   </div>
- </div>
 </section>
 
-<!-- MICROBIOLOGY FEATURE -->
-<section class="microbiology">
- <div class="container micro-content">
-  <div class="section-label">SPECIALIZED SCIENTIFIC FIELD</div>
-  <h2 class="section-title">Microbiology Working Group</h2>
-  <p class="section-intro">Promoting scientific exchange and interdisciplinary research in microbiology and its environmental and health-related dimensions.</p>
+<!-- PROGRAMS -->
 
-  <div class="micro
+<section id="programs">
+  <div class="container">
+
+    <div class="section-label">OUR ACTIVITIES</div>
+    <h2 class="section-title">Programs & Activities</h2>
+
+    <p class="section-intro">
+      EESD promotes scientific communication, professional development and
+      interdisciplinary cooperation through its educational and research activities.
+    </p>
+
+    <div class="program-grid">
+
+      <article class="card">
+        <div class="card-icon">🔬</div>
+        <h3>Scientific Research</h3>
+        <p>Supporting research initiatives and scientific cooperation across relevant disciplines.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📖</div>
+        <h3>Educational Workshops</h3>
+        <p>Scientific training, educational activities and knowledge exchange.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🌐</div>
+        <h3>Scientific Communication</h3>
+        <p>Sharing research information, publications and scientific resources.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🤝</div>
+        <h3>Research Collaboration</h3>
+        <p>Encouraging interdisciplinary cooperation between researchers and institutions.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🌍</div>
+        <h3>Environmental Awareness</h3>
+        <p>Promoting responsible environmental practices and public engagement.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🛡️</div>
+        <h3>Ethical Research</h3>
+        <p>Supporting responsible research practices and ethical scientific conduct.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- RESOURCES -->
+
+<section style="background:#edf5ef" id="resources">
+  <div class="container">
+    <div class="section-label">KNOWLEDGE & DOCUMENTATION</div>
+    <h2 class="section-title">Scientific Resources</h2>
+    <p class="section-intro">
+      Access the Association's available documentation and scientific resources.
+    </p>
+
+    <div class="program-grid">
+
+      <article class="card">
+        <div class="card-icon">📑</div>
+        <h3>Ethical Guidelines</h3>
+        <p>International standards and research ethics references.</p>
+        <a href="#ethics">Explore guidelines →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🐾</div>
+        <h3>Animal Protection</h3>
+        <p>Documents and resources relating to animal welfare.</p>
+        <a href="https://github.com/iraneesd/Animal-Protection-Bill/blob/prospect/README.md" target="_blank" rel="noopener">View documents →</a>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🌐</div>
+        <h3>Scientific Association Archive</h3>
+        <p>Historical information and the Association's original identity.</p>
+        <a href="https://github.com/iraneesd" target="_blank" rel="noopener">Visit original profile →</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact-section" id="contact">
+  <div class="container">
+
+    <div class="section-label">GET IN TOUCH</div>
+    <h2 class="section-title">Contact the Association</h2>
+
+    <div class="contact-box">
+
+      <div>
+        <h3>Scientific Association for Environmental Education and Sustainable Development</h3>
+        <p>
+          For scientific cooperation, educational activities and general inquiries,
+          please contact the Association.
+        </p>
+        <p>
+          We welcome scientific dialogue and interdisciplinary collaboration.
+        </p>
+      </div>
+
+      <div>
+        <a class="contact-link" href="mailto:iraneesd@yahoo.com">
+          ✉ iraneesd@yahoo.com
+        </a>
+        <a class="contact-link" href="https://github.com/iraneesd" target="_blank" rel="noopener">
+          ◈ Official GitHub Profile
+        </a>
+        <a class="contact-link" href="#home">
+          ↑ Back to Homepage
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <strong>EESD</strong>
+      <p>Science · Environment · Sustainability</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#ethics">Ethics</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <p>© <span id="year"></span> EESD. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("navigation").classList.toggle("open");
+}
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.getElementById("navigation").classList.remove("open");
+  });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+let isPersian = false;
+
+function toggleLanguage() {
+  isPersian = !isPersian;
+
+  document.body.classList.toggle("fa", isPersian);
+  document.documentElement.lang = isPersian ? "fa" : "en";
+  document.getElementById("languageButton").textContent =
+    isPersian ? "EN" : "FA";
+
+  document.querySelectorAll("[data-en][data-fa]").forEach(element => {
+    element.textContent = isPersian
+      ? element.dataset.fa
+      : element.dataset.en;
+  });
+}
+</script>
+
+</body>
+</html>
